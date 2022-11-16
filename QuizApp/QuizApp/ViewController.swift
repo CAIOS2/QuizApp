@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -20,7 +20,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func leaderboardTapped(_ sender: Any) {
+        let leaderboardVC = LeaderboardViewControler()
+        
+        navigationController?.pushViewController(leaderboardVC, animated: true)
     }
     
 }
+
 
