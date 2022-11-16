@@ -17,37 +17,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QuizApp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDK-cl-0O3">
-                                <rect key="frame" x="20" y="109" width="353" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="20" y="109.00000000000001" width="353" height="40.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWc-Od-tgd">
-                                <rect key="frame" x="20" y="330" width="353" height="50"/>
+                                <rect key="frame" x="20" y="349.66666666666669" width="353" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Knj-h6-ImT"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="0tQ-an-MQ8"/>
+                                    <constraint firstAttribute="height" constant="70" id="Knj-h6-ImT"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Start Game">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" systemColor="linkColor"/>
                                     </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="startGameTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6wy-q5-aeu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mT-av-rne">
-                                <rect key="frame" x="20" y="430" width="353" height="50"/>
+                                <rect key="frame" x="20" y="469.66666666666669" width="353" height="70.000000000000057"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="dGC-e3-htj"/>
+                                    <constraint firstAttribute="height" constant="70" id="dGC-e3-htj"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button">
+                                <buttonConfiguration key="configuration" style="plain" title="Leaderboard">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" systemColor="systemMintColor"/>
                                         <color key="strokeColor" systemColor="systemMintColor"/>
                                     </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="leaderboardButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uad-0C-lTO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

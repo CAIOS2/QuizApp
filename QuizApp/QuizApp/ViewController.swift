@@ -13,7 +13,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+//MARK: Actions
+    @IBAction private func startGameTapped(_ sender: Any) {
+    }
+    
+    @IBAction private func leaderboardButtonTapped(_ sender: Any) {
+    }
 }
 
