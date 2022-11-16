@@ -16,6 +16,8 @@
 		84E256712925586900B02E53 /* QuizApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84E2566F2925586900B02E53 /* QuizApp.xcdatamodeld */; };
 		84E256732925586B00B02E53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E256722925586B00B02E53 /* Assets.xcassets */; };
 		84E256762925586B00B02E53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E256742925586B00B02E53 /* LaunchScreen.storyboard */; };
+		D58C6635292575C700EE4C15 /* StartNewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C6634292575C700EE4C15 /* StartNewGameViewController.swift */; };
+		D58C66372925761800EE4C15 /* StartNewGame.xib in Resources */ = {isa = PBXBuildFile; fileRef = D58C66362925761800EE4C15 /* StartNewGame.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		84E256722925586B00B02E53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84E256752925586B00B02E53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84E256772925586B00B02E53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D58C6634292575C700EE4C15 /* StartNewGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNewGameViewController.swift; sourceTree = "<group>"; };
+		D58C66362925761800EE4C15 /* StartNewGame.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartNewGame.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				84E256682925586900B02E53 /* SceneDelegate.swift */,
 				84E2566A2925586900B02E53 /* ViewController.swift */,
 				84E2566C2925586900B02E53 /* Main.storyboard */,
+				D58C66362925761800EE4C15 /* StartNewGame.xib */,
+				D58C6634292575C700EE4C15 /* StartNewGameViewController.swift */,
 				81BBF1B229256CA700BD4181 /* LeaderboardViewControler.swift */,
 				81BBF1B329256CA700BD4181 /* LeaderboardViewControler.xib */,
 				84E256722925586B00B02E53 /* Assets.xcassets */,
@@ -138,6 +144,7 @@
 				81BBF1B529256CA700BD4181 /* LeaderboardViewControler.xib in Resources */,
 				84E256732925586B00B02E53 /* Assets.xcassets in Resources */,
 				84E2566E2925586900B02E53 /* Main.storyboard in Resources */,
+				D58C66372925761800EE4C15 /* StartNewGame.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +159,7 @@
 				84E256672925586900B02E53 /* AppDelegate.swift in Sources */,
 				84E256712925586900B02E53 /* QuizApp.xcdatamodeld in Sources */,
 				81BBF1B429256CA700BD4181 /* LeaderboardViewControler.swift in Sources */,
+				D58C6635292575C700EE4C15 /* StartNewGameViewController.swift in Sources */,
 				84E256692925586900B02E53 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

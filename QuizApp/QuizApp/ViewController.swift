@@ -17,6 +17,10 @@ class ViewController: UIViewController {
     //MARK: - Action
     
     @IBAction private func startGameTapped(_ sender: Any) {
+        let startNewGameVC = StartNewGameViewController()
+        
+        navigationController?.pushViewController(startNewGameVC, animated: true)
+    
     }
     
     @IBAction private func leaderboardTapped(_ sender: Any) {
