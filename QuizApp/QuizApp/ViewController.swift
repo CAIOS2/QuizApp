@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func leaderboardTapped(_ sender: Any) {
-        let leaderboardVC = LeaderboardViewControler()
+        let leaderboardVC = LeaderboardViewController()
         
         navigationController?.pushViewController(leaderboardVC, animated: true)
     }
