@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6144D95229256C9A004E4CEF /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6144D95029256C9A004E4CEF /* LeaderboardViewController.swift */; };
+		6144D95329256C9A004E4CEF /* LeaderboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6144D95129256C9A004E4CEF /* LeaderboardViewController.xib */; };
 		84E256672925586900B02E53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E256662925586900B02E53 /* AppDelegate.swift */; };
 		84E256692925586900B02E53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E256682925586900B02E53 /* SceneDelegate.swift */; };
 		84E2566B2925586900B02E53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2566A2925586900B02E53 /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6144D95029256C9A004E4CEF /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
+		6144D95129256C9A004E4CEF /* LeaderboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaderboardViewController.xib; sourceTree = "<group>"; };
 		84E256632925586900B02E53 /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E256662925586900B02E53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84E256682925586900B02E53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 				84E256742925586B00B02E53 /* LaunchScreen.storyboard */,
 				84E256772925586B00B02E53 /* Info.plist */,
 				84E2566F2925586900B02E53 /* QuizApp.xcdatamodeld */,
+				6144D95029256C9A004E4CEF /* LeaderboardViewController.swift */,
+				6144D95129256C9A004E4CEF /* LeaderboardViewController.xib */,
 			);
 			path = QuizApp;
 			sourceTree = "<group>";
@@ -130,6 +136,7 @@
 			files = (
 				84E256762925586B00B02E53 /* LaunchScreen.storyboard in Resources */,
 				84E256732925586B00B02E53 /* Assets.xcassets in Resources */,
+				6144D95329256C9A004E4CEF /* LeaderboardViewController.xib in Resources */,
 				84E2566E2925586900B02E53 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,6 +150,7 @@
 			files = (
 				84E2566B2925586900B02E53 /* ViewController.swift in Sources */,
 				84E256672925586900B02E53 /* AppDelegate.swift in Sources */,
+				6144D95229256C9A004E4CEF /* LeaderboardViewController.swift in Sources */,
 				84E256712925586900B02E53 /* QuizApp.xcdatamodeld in Sources */,
 				84E256692925586900B02E53 /* SceneDelegate.swift in Sources */,
 			);
