@@ -15,13 +15,14 @@ class QuizesViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+  //MARK: Outlets
 
-  @IBOutlet weak var blueButton: UIButton!
-  @IBOutlet weak var greenButton: UIButton!
-  @IBOutlet weak var redButton: UIButton!
-  @IBOutlet weak var yellowButton: UIButton!
-  @IBOutlet weak var pointsLabel: UILabel!
-  @IBOutlet weak var questionLabel: UILabel!
+  @IBOutlet private weak var blueButton: UIButton!
+  @IBOutlet private weak var greenButton: UIButton!
+  @IBOutlet private weak var redButton: UIButton!
+  @IBOutlet private weak var yellowButton: UIButton!
+  @IBOutlet private weak var pointsLabel: UILabel!
+  @IBOutlet private weak var questionLabel: UILabel!
 
   /*
     // MARK: - Navigation
