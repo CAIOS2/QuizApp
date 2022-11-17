@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,14 +17,45 @@
         <view contentMode="scaleToFill" id="gag-DJ-eec">
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Star new game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSs-mY-Ui3">
+                    <rect key="frame" x="92.666666666666671" y="197" width="204.66666666666663" height="38.333333333333343"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l9v-GQ-uXm">
+                    <rect key="frame" x="36" y="355.33333333333331" width="318" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="c1P-yI-UxI"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rtn-Y5-MvP">
+                    <rect key="frame" x="36" y="419.33333333333331" width="318" height="48"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Play!">
+                        <fontDescription key="titleFontDescription" type="system" pointSize="23"/>
+                    </buttonConfiguration>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="oE9-U4-fDz"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Rtn-Y5-MvP" firstAttribute="height" secondItem="l9v-GQ-uXm" secondAttribute="height" id="37Q-2k-jWn"/>
+                <constraint firstItem="Rtn-Y5-MvP" firstAttribute="top" secondItem="l9v-GQ-uXm" secondAttribute="bottom" constant="16" id="3gk-Yu-Q64"/>
+                <constraint firstItem="oE9-U4-fDz" firstAttribute="trailing" secondItem="Rtn-Y5-MvP" secondAttribute="trailing" constant="36" id="Hqf-dN-yid"/>
+                <constraint firstItem="l9v-GQ-uXm" firstAttribute="top" secondItem="gSs-mY-Ui3" secondAttribute="bottom" constant="120" id="KAV-QE-t4f"/>
+                <constraint firstItem="l9v-GQ-uXm" firstAttribute="centerX" secondItem="gag-DJ-eec" secondAttribute="centerX" id="MhY-NB-Lvg"/>
+                <constraint firstItem="oE9-U4-fDz" firstAttribute="trailing" secondItem="l9v-GQ-uXm" secondAttribute="trailing" constant="36" id="Vvq-xm-k13"/>
+                <constraint firstItem="Rtn-Y5-MvP" firstAttribute="leading" secondItem="oE9-U4-fDz" secondAttribute="leading" constant="36" id="fE8-qc-CmJ"/>
+                <constraint firstItem="l9v-GQ-uXm" firstAttribute="leading" secondItem="oE9-U4-fDz" secondAttribute="leading" constant="36" id="fiE-aj-CGT"/>
+                <constraint firstItem="gSs-mY-Ui3" firstAttribute="top" secondItem="oE9-U4-fDz" secondAttribute="top" constant="150" id="n9l-Nr-VVv"/>
+                <constraint firstItem="gSs-mY-Ui3" firstAttribute="centerX" secondItem="gag-DJ-eec" secondAttribute="centerX" id="vNx-3C-LA2"/>
+                <constraint firstItem="Rtn-Y5-MvP" firstAttribute="centerX" secondItem="gag-DJ-eec" secondAttribute="centerX" id="zQL-y5-irN"/>
+            </constraints>
             <point key="canvasLocation" x="188" y="26"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
