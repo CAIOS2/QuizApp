@@ -16,7 +16,14 @@ class QuizesViewController: UIViewController {
     }
 
 
-    /*
+  @IBOutlet weak var blueButton: UIButton!
+  @IBOutlet weak var greenButton: UIButton!
+  @IBOutlet weak var redButton: UIButton!
+  @IBOutlet weak var yellowButton: UIButton!
+  @IBOutlet weak var pointsLabel: UILabel!
+  @IBOutlet weak var questionLabel: UILabel!
+
+  /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
