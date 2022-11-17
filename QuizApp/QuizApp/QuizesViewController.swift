@@ -1,22 +1,20 @@
 //
-//  StartNewGameViewController.swift
+//  QuizViewController.swift
 //  QuizApp
 //
-//  Created by tomas vnoctrus on 2022-11-16.
+//  Created by tomas vnoctrus on 2022-11-17.
 //
 
 import UIKit
 
-class StartNewGameViewController: UIViewController {
+class QuizesViewController: UIViewController {
 
-    @IBAction func playTapped(_ sender: Any) {
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
+
 
     /*
     // MARK: - Navigation
