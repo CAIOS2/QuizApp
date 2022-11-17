@@ -1,27 +1,21 @@
 //
-//  StartNewGameViewController.swift
+//  QuizesViewController.swift
 //  QuizApp
 //
-//  Created by tomas vnoctrus on 2022-11-16.
+//  Created by reromac on 2022-11-17.
 //
 
 import UIKit
 
-class StartNewGameViewController: UIViewController {
+class QuizesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
-    @IBAction func playGameButtonTapped(_ sender: Any) {
-        let quizesVC = QuizesViewController()
-        
-        navigationController?.pushViewController(quizesVC, animated: true)
-    
-    }
-    
+
+
     /*
     // MARK: - Navigation
 
@@ -32,6 +26,4 @@ class StartNewGameViewController: UIViewController {
     }
     */
 
-    
-    
 }

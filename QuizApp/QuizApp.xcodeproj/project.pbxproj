@@ -16,6 +16,8 @@
 		84E256712925586900B02E53 /* QuizApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84E2566F2925586900B02E53 /* QuizApp.xcdatamodeld */; };
 		84E256732925586B00B02E53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E256722925586B00B02E53 /* Assets.xcassets */; };
 		84E256762925586B00B02E53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E256742925586B00B02E53 /* LaunchScreen.storyboard */; };
+		92E778702926A08200D60578 /* QuizesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7786E2926A08200D60578 /* QuizesViewController.swift */; };
+		92E778712926A08200D60578 /* QuizesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92E7786F2926A08200D60578 /* QuizesViewController.xib */; };
 		D58C6635292575C700EE4C15 /* StartNewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C6634292575C700EE4C15 /* StartNewGameViewController.swift */; };
 		D58C66372925761800EE4C15 /* StartNewGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D58C66362925761800EE4C15 /* StartNewGameViewController.xib */; };
 /* End PBXBuildFile section */
@@ -32,6 +34,8 @@
 		84E256722925586B00B02E53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84E256752925586B00B02E53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84E256772925586B00B02E53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92E7786E2926A08200D60578 /* QuizesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizesViewController.swift; sourceTree = "<group>"; };
+		92E7786F2926A08200D60578 /* QuizesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizesViewController.xib; sourceTree = "<group>"; };
 		D58C6634292575C700EE4C15 /* StartNewGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNewGameViewController.swift; sourceTree = "<group>"; };
 		D58C66362925761800EE4C15 /* StartNewGameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartNewGameViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +74,8 @@
 				84E256682925586900B02E53 /* SceneDelegate.swift */,
 				84E2566A2925586900B02E53 /* ViewController.swift */,
 				84E2566C2925586900B02E53 /* Main.storyboard */,
+				92E7786E2926A08200D60578 /* QuizesViewController.swift */,
+				92E7786F2926A08200D60578 /* QuizesViewController.xib */,
 				D58C66362925761800EE4C15 /* StartNewGameViewController.xib */,
 				D58C6634292575C700EE4C15 /* StartNewGameViewController.swift */,
 				81BBF1B229256CA700BD4181 /* LeaderboardViewController.swift */,
@@ -145,6 +151,7 @@
 				84E256732925586B00B02E53 /* Assets.xcassets in Resources */,
 				84E2566E2925586900B02E53 /* Main.storyboard in Resources */,
 				D58C66372925761800EE4C15 /* StartNewGameViewController.xib in Resources */,
+				92E778712926A08200D60578 /* QuizesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +164,7 @@
 			files = (
 				84E2566B2925586900B02E53 /* ViewController.swift in Sources */,
 				84E256672925586900B02E53 /* AppDelegate.swift in Sources */,
+				92E778702926A08200D60578 /* QuizesViewController.swift in Sources */,
 				84E256712925586900B02E53 /* QuizApp.xcdatamodeld in Sources */,
 				81BBF1B429256CA700BD4181 /* LeaderboardViewController.swift in Sources */,
 				D58C6635292575C700EE4C15 /* StartNewGameViewController.swift in Sources */,
