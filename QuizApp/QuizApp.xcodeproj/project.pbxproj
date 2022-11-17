@@ -13,6 +13,7 @@
 		68A6CDAB2926BFF50000F5E1 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6CDAA2926BFF50000F5E1 /* UserManager.swift */; };
 		68A6CDAD2926C00D0000F5E1 /* LeaderBoardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6CDAC2926C00D0000F5E1 /* LeaderBoardManager.swift */; };
 		68A6CDB02926C0530000F5E1 /* UIAlertController+showAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6CDAF2926C0530000F5E1 /* UIAlertController+showAlert.swift */; };
+		68A6CDB22926C1D70000F5E1 /* QuestionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6CDB12926C1D70000F5E1 /* QuestionRepository.swift */; };
 		81BBF1B429256CA700BD4181 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BBF1B229256CA700BD4181 /* LeaderboardViewController.swift */; };
 		81BBF1B529256CA700BD4181 /* LeaderboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81BBF1B329256CA700BD4181 /* LeaderboardViewController.xib */; };
 		84E256672925586900B02E53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E256662925586900B02E53 /* AppDelegate.swift */; };
@@ -35,6 +36,7 @@
 		68A6CDAA2926BFF50000F5E1 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		68A6CDAC2926C00D0000F5E1 /* LeaderBoardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardManager.swift; sourceTree = "<group>"; };
 		68A6CDAF2926C0530000F5E1 /* UIAlertController+showAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+showAlert.swift"; sourceTree = "<group>"; };
+		68A6CDB12926C1D70000F5E1 /* QuestionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRepository.swift; sourceTree = "<group>"; };
 		81BBF1B229256CA700BD4181 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
 		81BBF1B329256CA700BD4181 /* LeaderboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaderboardViewController.xib; sourceTree = "<group>"; };
 		84E256632925586900B02E53 /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +134,7 @@
 		68A6CDA12926BEEF0000F5E1 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				68A6CDB12926C1D70000F5E1 /* QuestionRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				84E2566B2925586900B02E53 /* ViewController.swift in Sources */,
 				84E256672925586900B02E53 /* AppDelegate.swift in Sources */,
 				68A6CDA92926BFE50000F5E1 /* QuizManager.swift in Sources */,
+				68A6CDB22926C1D70000F5E1 /* QuestionRepository.swift in Sources */,
 				92E778702926A08200D60578 /* QuizesViewController.swift in Sources */,
 				68A6CDA62926BFB00000F5E1 /* Question.swift in Sources */,
 				84E256712925586900B02E53 /* QuizApp.xcdatamodeld in Sources */,
