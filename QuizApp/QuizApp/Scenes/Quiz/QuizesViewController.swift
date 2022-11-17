@@ -24,6 +24,9 @@ class QuizesViewController: UIViewController {
   @IBOutlet private weak var pointsLabel: UILabel!
   @IBOutlet private weak var questionLabel: UILabel!
 
+
+
+  
   /*
     // MARK: - Navigation
 
