@@ -15,7 +15,10 @@ class StartNewGameViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func playGameButtonTapped(_ sender: Any) {
+    
+    // MARK: - Actions
+    
+    @IBAction private func playGameButtonTapped(_ sender: Any) {
         let quizesVC = QuizesViewController()
         
         navigationController?.pushViewController(quizesVC, animated: true)
