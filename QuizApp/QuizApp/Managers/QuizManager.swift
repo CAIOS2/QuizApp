@@ -37,11 +37,11 @@ final class QuizManager {
    
     // MARK: - Helpers
     private func calculatePointsForCorrectAnswer() -> Int {
-        // paskaiciuoti taskus uz teisinga atsakyma
+        // paskaiciuoti taskus uz teisinga atsakyma, taskai yra dauginami is dabartinio is eiles atsakytu klausimu skaiciaus
     }
     
     private func calculatePointsForWrongAnswer() -> Int {
-        // paskaiciuoti taskus uz neteisinga atsakyma
+        // paskaiciuoti taskus uz neteisinga atsakyma, taskai yra dauginami is dabartinio is eiles neatsakytu klausimu skaiciaus
     }
 }
 

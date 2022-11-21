@@ -48,6 +48,5 @@ class User {
         // perskaiciuoti useriu atsakymu taikluma
         let accuracy = (Double(correctAnswersCount) / Double(QuizConstants.numberOfQuestionsPerQuiz * completedQuizCount))
         totalAccuracy = Int(accuracy * 100)
-        
     }
 }
