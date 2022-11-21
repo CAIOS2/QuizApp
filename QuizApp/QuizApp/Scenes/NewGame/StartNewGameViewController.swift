@@ -8,7 +8,8 @@
 import UIKit
 
 class StartNewGameViewController: UIViewController {
-
+    let questionRepository: QuestionsRepository = QuestionsRepository()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,10 +18,8 @@ class StartNewGameViewController: UIViewController {
     
     
     // MARK: - Actions
-    
     @IBAction private func playGameButtonTapped(_ sender: Any) {
         let quizesVC = QuizesViewController()
-        
         navigationController?.pushViewController(quizesVC, animated: true)
     
     }

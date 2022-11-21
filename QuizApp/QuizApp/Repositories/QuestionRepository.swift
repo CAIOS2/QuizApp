@@ -68,10 +68,10 @@ class Question {
 }
 
 final class QuestionsRepository {
-    //TODO: 2: Now we can use this call to get the questions in completion (P.S: Its our lovely closure!)
     func getQuestions(completion: @escaping ([Question]) -> Void) {
         let apiURL  = URL(string: "https://opentdb.com/api.php?amount=50&difficulty=easy&type=multiple&encode=url3986")
         let request = URLRequest(url: apiURL!)
+    
 
         let session = URLSession.shared
         let task = session.dataTask(with: request, completionHandler: { [unowned self] data, _, _ -> Void in
@@ -82,9 +82,6 @@ final class QuestionsRepository {
         })
         task.resume()
     }
-    
-    // TODO: 1: Missing `Question` Class :) Read closely here. You can see how that `Question` class should
-    // look. It shows the init.
     
     private func parseQuestionsFromResponse(_ response: APIResponse) -> [Question] {
         var questions: [Question] = []

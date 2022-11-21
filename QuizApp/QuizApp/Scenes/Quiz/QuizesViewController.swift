@@ -8,10 +8,6 @@
 import UIKit
 
 class QuizesViewController: UIViewController {
-    
-
-
-    
     //MARK: - Override
     
     override func viewDidLoad() {
@@ -28,8 +24,6 @@ class QuizesViewController: UIViewController {
     @IBOutlet private weak var yellowButton: UIButton!
     @IBOutlet private weak var pointsLabel: UILabel!
     @IBOutlet private weak var questionLabel: UILabel!
-    
-    
     
     
     /*
