@@ -7,6 +7,9 @@
 
 import Foundation
 
+
+//MARK: - Structs
+
 private struct APIResponse: Decodable {
     enum CodingKeys: String, CodingKey {
         case response_code
@@ -46,41 +49,59 @@ private struct QuestionJSON: Decodable {
     }
 }
 
+
+// MARK: - Classes
+
+class Question {
+    var questionText: String
+    var answers: [String]
+    var category: String
+    var correctAnswerIndex: Int
+    
+    init(questionText:  String, answers: [String], category: String, correctAnswerIndex: Int) {
+        self.questionText = questionText
+        self.answers = answers
+        self.category = category
+        self.correctAnswerIndex = correctAnswerIndex
+
+    }
+}
+
 final class QuestionsRepository {
     //TODO: 2: Now we can use this call to get the questions in completion (P.S: Its our lovely closure!)
-//    func getQuestions(completion: @escaping ([Question]) -> Void) {
-//        let apiURL = URL(string: "https://opentdb.com/api.php?amount=50&difficulty=easy&type=multiple&encode=url3986")
-//        let request = URLRequest(url: apiURL!)
-//
-//        let session = URLSession.shared
-//        let task = session.dataTask(with: request, completionHandler: { [unowned self] data, _, _ -> Void in
-//            do {
-//                let response: APIResponse = try! JSONDecoder().decode(APIResponse.self, from: data!)
-//                completion(self.parseQuestionsFromResponse(response))
-//            }
-//        })
-//        task.resume()
-//    }
+    func getQuestions(completion: @escaping ([Question]) -> Void) {
+        let apiURL  = URL(string: "https://opentdb.com/api.php?amount=50&difficulty=easy&type=multiple&encode=url3986")
+        let request = URLRequest(url: apiURL!)
+
+        let session = URLSession.shared
+        let task = session.dataTask(with: request, completionHandler: { [unowned self] data, _, _ -> Void in
+            do {
+                let response: APIResponse = try! JSONDecoder().decode(APIResponse.self, from: data!)
+                completion(self.parseQuestionsFromResponse(response))
+            }
+        })
+        task.resume()
+    }
     
     // TODO: 1: Missing `Question` Class :) Read closely here. You can see how that `Question` class should
     // look. It shows the init.
     
-//    private func parseQuestionsFromResponse(_ response: APIResponse) -> [Question] {
-//        var questions: [Question] = []
-//
-//        for questionJSON in response.results {
-//            var allAnswers = questionJSON.incorrectAnswers
-//            allAnswers.append(questionJSON.correctAnswer)
-//            allAnswers.shuffle()
-//
-//            let question = Question(
-//                questionText: questionJSON.question,
-//                answers: allAnswers,
-//                category: questionJSON.category,
-//                correctAnswerIndex: allAnswers.firstIndex(of: questionJSON.correctAnswer)!
-//            )
-//            questions.append(question)
-//        }
-//        return questions
-//    }
+    private func parseQuestionsFromResponse(_ response: APIResponse) -> [Question] {
+        var questions: [Question] = []
+
+        for questionJSON in response.results {
+            var allAnswers = questionJSON.incorrectAnswers
+            allAnswers.append(questionJSON.correctAnswer)
+            allAnswers.shuffle()
+
+            let question = Question(
+                questionText: questionJSON.question,
+                answers: allAnswers,
+                category: questionJSON.category,
+                correctAnswerIndex: allAnswers.firstIndex(of: questionJSON.correctAnswer)!
+            )
+            questions.append(question)
+            }
+        return questions
+    }
 }
