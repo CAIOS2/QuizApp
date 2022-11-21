@@ -24,14 +24,18 @@ class User {
 
     func calculatePointsForCorrectAnswer(points: Int) {
         // Ka daryti teisingai atsakius klausima
+        userPoints += points
+        correctAnswersCount += 1
     }
 
     func calculatePointsForWrongAnswer(points: Int) {
         // Ka daryti neteisingai atsakius klausima
+        userPoints -= points
     }
 
     func totalPoints() -> Int {
         // grazinti kiek useris turi is viso tasku
+        return userPoints
     }
 
     func updateCompletedQuizCount() {
