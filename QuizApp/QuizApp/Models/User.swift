@@ -40,9 +40,14 @@ class User {
 
     func updateCompletedQuizCount() {
         // iskvieciama baigus zaidimui, reikia zinoti kiek zaidimu is vis useris yra atlikes ir perskaiciuoti jo atsakymu taikluma
+        completedQuizCount += 1
+        calculateTotalAccuracy()
     }
 
     func calculateTotalAccuracy() {
         // perskaiciuoti useriu atsakymu taikluma
+        let accuracy = (Double(correctAnswersCount) / Double(QuizConstants.numberOfQuestionsPerQuiz * completedQuizCount))
+        totalAccuracy = Int(accuracy * 100)
+        
     }
 }
