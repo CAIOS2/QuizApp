@@ -71,7 +71,6 @@ final class QuestionsRepository {
     func getQuestions(completion: @escaping ([Question]) -> Void) {
         let apiURL  = URL(string: "https://opentdb.com/api.php?amount=50&difficulty=easy&type=multiple&encode=url3986")
         let request = URLRequest(url: apiURL!)
-    
 
         let session = URLSession.shared
         let task = session.dataTask(with: request, completionHandler: { [unowned self] data, _, _ -> Void in
@@ -80,6 +79,7 @@ final class QuestionsRepository {
                 completion(self.parseQuestionsFromResponse(response))
             }
         })
+        
         task.resume()
     }
     

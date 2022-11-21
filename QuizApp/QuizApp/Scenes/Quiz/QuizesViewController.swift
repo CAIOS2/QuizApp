@@ -8,8 +8,10 @@
 import UIKit
 
 class QuizesViewController: UIViewController {
-    //MARK: - Override
     
+    var questions: [Question] = []
+    
+    //MARK: - Override
     override func viewDidLoad() {
         super.viewDidLoad()
         

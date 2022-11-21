@@ -4,24 +4,26 @@
 //
 //  Created by tomas vnoctrus on 2022-11-16.
 //
-
 import UIKit
 
 class StartNewGameViewController: UIViewController {
     let questionRepository: QuestionsRepository = QuestionsRepository()
     
+    var questions: [Question] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        questionRepository.getQuestions { [unowned self] questions in
+            self.questions = questions
+        }
         // Do any additional setup after loading the view.
     }
-    
     
     // MARK: - Actions
     @IBAction private func playGameButtonTapped(_ sender: Any) {
         let quizesVC = QuizesViewController()
-        navigationController?.pushViewController(quizesVC, animated: true)
-    
+        quizesVC.questions = questions
+        self.navigationController?.pushViewController(quizesVC, animated: true)
     }
     
     /*
