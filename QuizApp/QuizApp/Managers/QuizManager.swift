@@ -42,6 +42,9 @@ final class QuizManager {
     }
     func resetGame() {
         currentQuestionIndex = 0
+        points = 0
+        correctAnswersInARow = 0
+        wrongAnswersInARow = 0
     }
     
     func loadQuestion() -> Question {
