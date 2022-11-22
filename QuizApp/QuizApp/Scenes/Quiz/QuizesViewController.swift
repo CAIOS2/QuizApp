@@ -24,9 +24,8 @@ class AnswerButton: UIButton {
 class QuizesViewController: UIViewController {
     
     var quizManager: QuizManager!
-    private var correctIndex: Int = 0
     
-    //MARK: Outlets
+    // MARK: - Outlets
     
     @IBOutlet private weak var pointsLabel: UILabel!
     
@@ -36,7 +35,8 @@ class QuizesViewController: UIViewController {
     @IBOutlet private var redButton: UIButton!
     @IBOutlet private var yellowButton: UIButton!
     
-    //MARK: - Override
+    // MARK: - Views
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         questionLabel.numberOfLines = 0
@@ -47,51 +47,45 @@ class QuizesViewController: UIViewController {
         loadQuestions()
     }
     
+    // MARK: - Events
+    
     @IBAction func buttonPressed(_ sender: Any) {
+        
         let source = sender as! UIButton
         var buttonIndex: Int = 0
         
         switch source {
-        case blueButton: buttonIndex = 0
-        case greenButton: buttonIndex = 1
-        case redButton: buttonIndex = 2
-        case yellowButton: buttonIndex = 3
-        default: {}()
+        case blueButton:    buttonIndex = 0
+        case greenButton:   buttonIndex = 1
+        case redButton:     buttonIndex = 2
+        case yellowButton:  buttonIndex = 3
+        default: return
         }
         
-        let points = quizManager.calculatePoints(for: buttonIndex)
+        let wasCorrect = quizManager.didAnswer(index: buttonIndex)
+        let text = wasCorrect ? "Correct" : "Incorrect"
+        pointsLabel.text = "\(text). You now have \(quizManager.getPoints()) points"
         
-        if buttonIndex == correctIndex {
-            pointsLabel.text = "Correct. You now have \(points) points"
-        } else {
-            pointsLabel.text = "Incorrect. You now have \(points) points"
-        }
-        
-        if quizManager.hasMoreQuestions() {
-            loadQuestions()
-        } else {
-            finishedPopup()
-            questionLabel.text = "Game finished"
-        }
+        loadQuestions()
     }
     
+    // MARK: - Actions
+    
     private func loadQuestions() {
-        // 1 pasiimti klausima
-        let question: Question = quizManager.loadQuestion()
+        guard let question = quizManager.loadQuestion() else {
+            gameFinishedPopup()
+            return
+        }
         
-        // 2 sudeti texta
         questionLabel.text = question.questionText
         
         blueButton.setTitle(question.answers[0], for: .normal)
         greenButton.setTitle(question.answers[1], for: .normal)
         redButton.setTitle(question.answers[2], for: .normal)
         yellowButton.setTitle(question.answers[3], for: .normal)
-        
-        correctIndex = question.correctAnswerIndex
     }
     
-    
-    private func finishedPopup() {
+    private func gameFinishedPopup() {
         let view = UIAlertController(
             title: "Game Finished",
             message: "You got \(quizManager.getPoints()) points!",
@@ -100,10 +94,7 @@ class QuizesViewController: UIViewController {
         let actions = [
             UIAlertAction(
                 title: "Restart",
-                style: .default,
-                handler: { [unowned self] _ in
-                    self.quizManager.resetGame()
-                })
+                style: .default)
         ]
         
         for action in actions {
@@ -112,19 +103,5 @@ class QuizesViewController: UIViewController {
         
         present(view, animated: true)
     }
-    
-    
-
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

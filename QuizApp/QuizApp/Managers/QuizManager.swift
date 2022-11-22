@@ -16,7 +16,7 @@ final class QuizManager {
     private let questions: [Question]
     private let pointsForAnswer = 2
     
-    var currentQuestionIndex = 0
+    private var currentQuestionIndex = 0
     private var points = 0
     private var correctAnswersInARow = 0
     private var wrongAnswersInARow = 0
@@ -26,38 +26,38 @@ final class QuizManager {
         self.questions = questions
     }
     
-    func calculatePoints(for index: Int) -> Int {
-        // paziureti ar useris teisingai atsake klausima
-        if questions[currentQuestionIndex].correctAnswerIndex == index {
+    func getPoints() -> Int { points }
+    
+    func didAnswer(index: Int) -> Bool {
+        let wasCorrect = questions[currentQuestionIndex].correctAnswerIndex == index
+        if wasCorrect {
             calculatePointsForCorrectAnswer()
         } else {
             calculatePointsForWrongAnswer()
         }
-        
-        return points
+        return wasCorrect
     }
     
-    func getPoints() -> Int {
-        points
+    func loadQuestion() -> Question? {
+        // uzkrauti klausima
+        if currentQuestionIndex + 1 < QuizConstants.numberOfQuestionsPerQuiz {
+            currentQuestionIndex += 1
+            return questions[currentQuestionIndex]
+        } else {
+            resetGame()
+            return nil
+        }
     }
-    func resetGame() {
+   
+    // MARK: - Helpers
+    
+    private func resetGame() {
         currentQuestionIndex = 0
         points = 0
         correctAnswersInARow = 0
         wrongAnswersInARow = 0
     }
     
-    func loadQuestion() -> Question {
-        // uzkrauti klausima
-        currentQuestionIndex += 1
-        return questions[currentQuestionIndex]
-    }
-
-    func hasMoreQuestions() -> Bool {
-        currentQuestionIndex + 1 < QuizConstants.numberOfQuestionsPerQuiz
-    }
-   
-    // MARK: - Helpers
     private func calculatePointsForCorrectAnswer() {
         // paskaiciuoti taskus uz teisinga atsakyma, taskai yra dauginami is dabartinio is eiles atsakytu klausimu skaiciaus
         correctAnswersInARow += 1
