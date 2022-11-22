@@ -12,7 +12,6 @@ class QuizConstants {
 }
 
 final class QuizManager {
-    
     private let pointsForAnswer = 2
     
     private var currentQuestionIndex = 0
@@ -25,23 +24,41 @@ final class QuizManager {
     
     func calculatePoints(selectedAnswerIndex: Int) -> Int {
         // paziureti ar useris teisingai atsake klausima
+        if questions[currentQuestionIndex].correctAnswerIndex == selectedAnswerIndex {
+            calculatePointsForCorrectAnswer()
+        } else {
+            calculatePointsForWrongAnswer()
+        }
+        
+        return points
     }
     
-    func loadQuestion(isInitialQuestion: Bool) -> Question {
-        // uzkrauti klausima
-    }
-    
-    func checkIfQuizHasMoreQuestions() -> Bool {
-        // patikrinti ar paskutinis klausimas
-    }
+//    func loadQuestion(isInitialQuestion: Bool) -> Question {
+//        // uzkrauti klausima
+//    }
+//
+//    func checkIfQuizHasMoreQuestions() -> Bool {
+//        // patikrinti ar paskutinis klausimas
+//    }
    
     // MARK: - Helpers
-    private func calculatePointsForCorrectAnswer() -> Int {
+    private func calculatePointsForCorrectAnswer() {
         // paskaiciuoti taskus uz teisinga atsakyma, taskai yra dauginami is dabartinio is eiles atsakytu klausimu skaiciaus
+        correctAnswersInARow += 1
+        wrongAnswersInARow = 0
+
+        let calculatedPoints = pointsForAnswer * correctAnswersInARow
+        points += calculatedPoints
+        currentUser.calculatePointsForWrongAnswer(points: points)
     }
     
-    private func calculatePointsForWrongAnswer() -> Int {
+    private func calculatePointsForWrongAnswer() {
         // paskaiciuoti taskus uz neteisinga atsakyma, taskai yra dauginami is dabartinio is eiles neatsakytu klausimu skaiciaus
+        wrongAnswersInARow += 1
+        correctAnswersInARow = 0
+        let calculatedPoints = pointsForAnswer * wrongAnswersInARow
+        points -= calculatedPoints
+        currentUser.calculatePointsForWrongAnswer(points: calculatedPoints)
     }
 }
 

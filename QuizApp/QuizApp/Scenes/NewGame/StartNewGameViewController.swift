@@ -7,13 +7,18 @@
 import UIKit
 
 class StartNewGameViewController: UIViewController {
-    let questionRepository: QuestionsRepository = QuestionsRepository()
+    var questionProvider: QuestionProvider!
     
     var questions: [Question] = []
     
+//    init(questionProvider: QuestionProvider) {
+//        self.questionProvider = questionProvider
+//        super.init()
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        questionRepository.getQuestions { [unowned self] questions in
+        questionProvider.getQuestions { [unowned self] questions in
             self.questions = questions
         }
         // Do any additional setup after loading the view.
@@ -35,7 +40,4 @@ class StartNewGameViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
-    
-    
 }

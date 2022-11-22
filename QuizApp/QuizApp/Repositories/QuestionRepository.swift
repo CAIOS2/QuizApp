@@ -50,8 +50,12 @@ private struct QuestionJSON: Decodable {
 }
 
 
-// MARK: - Classes
+// MARK: - Protocols
+protocol QuestionProvider {
+    func getQuestions(completion: @escaping ([Question]) -> Void)
+}
 
+// MARK: - Classes
 class Question {
     var questionText: String
     var answers: [String]
@@ -67,12 +71,13 @@ class Question {
     }
 }
 
-final class QuestionsRepository {
+final class QuestionsRepository: QuestionProvider {
     func getQuestions(completion: @escaping ([Question]) -> Void) {
         let apiURL  = URL(string: "https://opentdb.com/api.php?amount=50&difficulty=easy&type=multiple&encode=url3986")
         let request = URLRequest(url: apiURL!)
 
         let session = URLSession.shared
+        
         let task = session.dataTask(with: request, completionHandler: { [unowned self] data, _, _ -> Void in
             do {
                 let response: APIResponse = try! JSONDecoder().decode(APIResponse.self, from: data!)

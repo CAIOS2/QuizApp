@@ -16,8 +16,18 @@ class HomeViewController: UIViewController {
 
     //MARK: - Action
     
+    class MockQuestionProvider: QuestionProvider {
+        func getQuestions(completion: @escaping ([Question]) -> Void) {
+            completion([Question(
+                questionText: "Klausimas",
+                answers: ["a", "b", "c", "d"],
+                category: "question",
+                correctAnswerIndex: 2)])
+        }
+    }
     @IBAction private func startGameTapped(_ sender: Any) {
         let startNewGameVC = StartNewGameViewController()
+        startNewGameVC.questionProvider = QuestionsRepository() //QuestionsRepository()
         
         navigationController?.pushViewController(startNewGameVC, animated: true)
     
