@@ -16,12 +16,17 @@ class StartNewGameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         questionProvider.getQuestions { [unowned self] questions in
             self.quizManager = QuizManager(
                 user: User(username: "Useris"),
                 questions: questions)
         }
-        // Do any additional setup after loading the view.
     }
     
     // MARK: - Actions
