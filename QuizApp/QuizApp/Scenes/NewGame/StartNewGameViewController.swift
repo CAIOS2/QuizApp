@@ -9,6 +9,8 @@ import UIKit
 class StartNewGameViewController: UIViewController {
     var questionProvider: QuestionProvider!
     var quizManager: QuizManager!
+    
+
 //    init(questionProvider: QuestionProvider) {
 //        self.questionProvider = questionProvider
 //        super.init()
@@ -17,11 +19,12 @@ class StartNewGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         questionProvider.getQuestions { [unowned self] questions in
-            self.quizManager = QuizManager(
+            quizManager = QuizManager(
                 user: User(username: "Useris"),
-                questions: questions)
+                questions: questions
+            )
         }
-        // Do any additional setup after loading the view.
+
     }
     
     // MARK: - Actions

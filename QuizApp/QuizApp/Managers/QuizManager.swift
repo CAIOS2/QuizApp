@@ -13,12 +13,10 @@ class QuizConstants {
 
 final class QuizManager {
     private let pointsForAnswer = 2
-    
-    private var currentQuestionIndex = 0
+    var currentQuestionIndex = 0
     private var points = 0
     private var correctAnswersInARow = 0
     private var wrongAnswersInARow = 0
-    
     private let currentUser: User
     private let questions: [Question]
 
@@ -49,7 +47,7 @@ final class QuizManager {
     }
 
     func checkIfQuizHasMoreQuestions() -> Bool {
-        return currentQuestionIndex + 1 < QuizConstants.numberOfQuestionsPerQuiz
+        currentQuestionIndex + 1 < QuizConstants.numberOfQuestionsPerQuiz
     }
    
     // MARK: - Helpers

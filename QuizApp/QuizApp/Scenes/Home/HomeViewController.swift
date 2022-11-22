@@ -27,7 +27,7 @@ class HomeViewController: UIViewController {
     }
     @IBAction private func startGameTapped(_ sender: Any) {
         let startNewGameVC = StartNewGameViewController()
-        startNewGameVC.questionProvider = QuestionsRepository() //QuestionsRepository()
+        startNewGameVC.questionProvider = QuestionsRepository()
         
         navigationController?.pushViewController(startNewGameVC, animated: true)
     
