@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="blueButton" destination="67W-4o-N0f" id="W5O-et-rhW"/>
                 <outlet property="greenButton" destination="i55-Ub-fYD" id="SpF-vH-X7f"/>
+                <outlet property="pointsCounterLabel" destination="ywv-IZ-FGU" id="efM-qn-hj8"/>
                 <outlet property="pointsLabel" destination="MGf-g2-ZEk" id="tJo-88-GFe"/>
                 <outlet property="questionLabel" destination="mNa-bY-oSK" id="TOA-hH-3tQ"/>
                 <outlet property="redButton" destination="0iJ-aB-akM" id="puo-PB-EkS"/>
@@ -97,6 +98,12 @@
                         <action selector="yellowButtonTapped:" destination="-1" eventType="touchUpInside" id="uI4-ct-3Ka"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywv-IZ-FGU">
+                    <rect key="frame" x="20" y="671.66666666666663" width="353" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="labelColor"/>
@@ -105,6 +112,7 @@
                 <constraint firstItem="0iJ-aB-akM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="45f-bk-Ybv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="i55-Ub-fYD" secondAttribute="trailing" constant="15" id="5fS-MT-fFG"/>
                 <constraint firstItem="67W-4o-N0f" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-5" id="6Di-Xt-sQY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ywv-IZ-FGU" secondAttribute="trailing" constant="20" id="Evf-ts-yks"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mNa-bY-oSK" secondAttribute="trailing" constant="20" id="JZN-nY-m8X"/>
                 <constraint firstItem="mNa-bY-oSK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="LZa-40-6R0"/>
                 <constraint firstItem="67W-4o-N0f" firstAttribute="top" secondItem="MGf-g2-ZEk" secondAttribute="bottom" constant="10" id="M5h-cB-Qyj"/>
@@ -116,8 +124,10 @@
                 <constraint firstItem="i55-Ub-fYD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="5" id="kmh-Sg-ZMB"/>
                 <constraint firstItem="0iJ-aB-akM" firstAttribute="width" secondItem="67W-4o-N0f" secondAttribute="width" id="llw-Fs-W6e"/>
                 <constraint firstItem="MGf-g2-ZEk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="pvW-F0-gb6"/>
+                <constraint firstItem="ywv-IZ-FGU" firstAttribute="top" secondItem="0iJ-aB-akM" secondAttribute="bottom" constant="20" id="rth-Yw-XIf"/>
                 <constraint firstItem="bjx-or-Lrs" firstAttribute="width" secondItem="i55-Ub-fYD" secondAttribute="width" id="uJE-Qv-lx1"/>
                 <constraint firstItem="MGf-g2-ZEk" firstAttribute="top" secondItem="mNa-bY-oSK" secondAttribute="bottom" constant="150" id="w6A-aM-YqM"/>
+                <constraint firstItem="ywv-IZ-FGU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="xq4-wP-Iqj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bjx-or-Lrs" secondAttribute="trailing" constant="15" id="yx8-8A-BeY"/>
             </constraints>
             <point key="canvasLocation" x="-152" y="23"/>

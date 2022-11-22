@@ -29,7 +29,7 @@ class QuizesViewController: UIViewController {
     @IBOutlet private weak var yellowButton: UIButton!
     @IBOutlet private weak var pointsLabel: UILabel!
     @IBOutlet private weak var questionLabel: UILabel!
-    
+    @IBOutlet weak var pointsCounterLabel: UILabel!
     
     // MARK: - Functions
     
@@ -57,8 +57,12 @@ class QuizesViewController: UIViewController {
     
     @IBAction func blueButtonTapped(_ sender: Any) {
         if quizManager.questions[quizManager.currentQuestionIndex].correctAnswerIndex == 0 {
+            pointsCounterLabel.text = "Correct, you got \(quizManager.calculatePoints(selectedAnswerIndex: 0)) points!"
+            pointsLabel.text = "Points: \(quizManager.points)"
             print("Blue true")
         } else {
+            pointsCounterLabel.text = "Incorrect, you lose \(quizManager.calculatePoints(selectedAnswerIndex: 0)) points!"
+            pointsLabel.text = "Points: \(quizManager.points)"
             print("Blue false")
         }
         
@@ -67,8 +71,12 @@ class QuizesViewController: UIViewController {
     
     @IBAction func greenButtonTapped(_ sender: Any) {
         if quizManager.questions[quizManager.currentQuestionIndex].correctAnswerIndex == 1 {
+            pointsCounterLabel.text = "Correct, you got \(quizManager.calculatePoints(selectedAnswerIndex: 1)) points!"
+            pointsLabel.text = "Points: \(quizManager.points)"
             print("Green true")
         } else {
+            pointsCounterLabel.text = "Incorrect, you lose \(quizManager.calculatePoints(selectedAnswerIndex: 1)) points!"
+            pointsLabel.text = "Points: \(quizManager.points)"
             print("Green false")
         }
     }
@@ -76,8 +84,12 @@ class QuizesViewController: UIViewController {
     
     @IBAction func redButtonTapped(_ sender: Any) {
         if quizManager.questions[quizManager.currentQuestionIndex].correctAnswerIndex == 2 {
+            pointsCounterLabel.text = "Correct, you got \(quizManager.calculatePoints(selectedAnswerIndex: 2)) points!"
+            pointsLabel.text = "Points: \(quizManager.points)"
             print("Red true")
         } else {
+            pointsCounterLabel.text = "Incorrect, you lose \(quizManager.calculatePoints(selectedAnswerIndex: 2)) points!"
+            pointsLabel.text = "Points: \(quizManager.points)"
             print("Red false")
         }
     }
@@ -85,8 +97,12 @@ class QuizesViewController: UIViewController {
     
     @IBAction func yellowButtonTapped(_ sender: Any) {
         if quizManager.questions[quizManager.currentQuestionIndex].correctAnswerIndex == 3 {
+            pointsCounterLabel.text = "Correct, you got \(quizManager.calculatePoints(selectedAnswerIndex: 3)) points!"
+            pointsLabel.text = "Points: \(quizManager.points)"
             print("yellow true")
         } else {
+            pointsCounterLabel.text = "Incorrect, you lose \(quizManager.calculatePoints(selectedAnswerIndex: 3)) points!"
+            pointsLabel.text = "Points: \(quizManager.points)"
             print("Yellow false")
         }
     }
