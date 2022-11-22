@@ -14,9 +14,12 @@ class QuizesViewController: UIViewController {
     //MARK: - Override
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
+        getQuestionLabel()
+        getAnswersLabels()
     }
+    
+
     
     //MARK: Outlets
     
@@ -26,6 +29,27 @@ class QuizesViewController: UIViewController {
     @IBOutlet private weak var yellowButton: UIButton!
     @IBOutlet private weak var pointsLabel: UILabel!
     @IBOutlet private weak var questionLabel: UILabel!
+    
+    
+    // MARK: - Functions
+    
+    func getQuestionLabel() {
+        let question = quizManager.questions[quizManager.currentQuestionIndex].questionText
+        questionLabel.text = question
+    }
+    
+    func getAnswersLabels() {
+        let answerBlue = quizManager.questions[quizManager.currentQuestionIndex].answers[0]
+        let answerGreen = quizManager.questions[quizManager.currentQuestionIndex].answers[1]
+        let answerRed = quizManager.questions[quizManager.currentQuestionIndex].answers[2]
+        let answerYellow = quizManager.questions[quizManager.currentQuestionIndex].answers[3]
+        
+        blueButton.setTitle(answerBlue, for: .normal)
+        greenButton.setTitle(answerGreen, for: .normal)
+        redButton.setTitle(answerRed, for: .normal)
+        yellowButton.setTitle(answerYellow, for: .normal)
+    }
+    
     
     
     /*
