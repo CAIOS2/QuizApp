@@ -34,9 +34,10 @@ class QuizesViewController: UIViewController {
     // MARK: - Functions
     
     func getQuestionLabel() {
-        let question = quizManager.questions[quizManager.currentQuestionIndex].questionText
-        questionLabel.text = question
+        let questionLabelValue = quizManager.questions[quizManager.currentQuestionIndex].questionText
+        questionLabel.text = questionLabelValue
         
+        print("primary question index: \(quizManager.currentQuestionIndex)")
         
     }
     
@@ -67,7 +68,7 @@ class QuizesViewController: UIViewController {
             print("Blue false")
         }
         if quizManager.checkIfQuizHasMoreQuestions() {
-            quizManager.loadQuestion(isInitialQuestion: true)
+            quizManager.loadQuestion(isInitialQuestion: false)
             getQuestionLabel()
             getAnswersLabels()
         }
@@ -85,7 +86,8 @@ class QuizesViewController: UIViewController {
             print("Green false")
         }
         if quizManager.checkIfQuizHasMoreQuestions() {
-            quizManager.loadQuestion(isInitialQuestion: true)
+            quizManager.loadQuestion(isInitialQuestion: false)
+
             getQuestionLabel()
             getAnswersLabels()
         }
@@ -104,7 +106,8 @@ class QuizesViewController: UIViewController {
             print("Red false")
         }
         if quizManager.checkIfQuizHasMoreQuestions() {
-            quizManager.loadQuestion(isInitialQuestion: true)
+            quizManager.loadQuestion(isInitialQuestion: false)
+
             getQuestionLabel()
             getAnswersLabels()
         }
@@ -122,7 +125,8 @@ class QuizesViewController: UIViewController {
             print("Yellow false")
         }
         if quizManager.checkIfQuizHasMoreQuestions() {
-            quizManager.loadQuestion(isInitialQuestion: true)
+            quizManager.loadQuestion(isInitialQuestion: false)
+
             getQuestionLabel()
             getAnswersLabels()
         }
