@@ -42,10 +42,10 @@ final class QuizManager {
         }
         return questions[currentQuestionIndex]
     }
-//
-//    func checkIfQuizHasMoreQuestions() -> Bool {
-//        // patikrinti ar paskutinis klausimas
-//    }
+
+    func checkIfQuizHasMoreQuestions() -> Bool {
+        return currentQuestionIndex + 1 < QuizConstants.numberOfQuestionsPerQuiz
+    }
    
     // MARK: - Helpers
     private func calculatePointsForCorrectAnswer() {
