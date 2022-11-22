@@ -12,22 +12,23 @@ class QuizConstants {
 }
 
 final class QuizManager {
+    private let currentUser: User
+    private let questions: [Question]
     private let pointsForAnswer = 2
+    
     var currentQuestionIndex = 0
     private var points = 0
     private var correctAnswersInARow = 0
     private var wrongAnswersInARow = 0
-    private let currentUser: User
-    private let questions: [Question]
 
     init(user: User, questions: [Question]) {
         self.currentUser = user
         self.questions = questions
     }
     
-    func calculatePoints(selectedAnswerIndex: Int) -> Int {
+    func calculatePoints(for index: Int) -> Int {
         // paziureti ar useris teisingai atsake klausima
-        if questions[currentQuestionIndex].correctAnswerIndex == selectedAnswerIndex {
+        if questions[currentQuestionIndex].correctAnswerIndex == index {
             calculatePointsForCorrectAnswer()
         } else {
             calculatePointsForWrongAnswer()
@@ -36,17 +37,20 @@ final class QuizManager {
         return points
     }
     
-    func loadQuestion(isInitialQuestion: Bool) -> Question {
+    func getPoints() -> Int {
+        points
+    }
+    func resetGame() {
+        currentQuestionIndex = 0
+    }
+    
+    func loadQuestion() -> Question {
         // uzkrauti klausima
-        if isInitialQuestion {
-            currentQuestionIndex = 0
-        } else {
-            currentQuestionIndex += 1
-        }
+        currentQuestionIndex += 1
         return questions[currentQuestionIndex]
     }
 
-    func checkIfQuizHasMoreQuestions() -> Bool {
+    func hasMoreQuestions() -> Bool {
         currentQuestionIndex + 1 < QuizConstants.numberOfQuestionsPerQuiz
     }
    
@@ -65,6 +69,7 @@ final class QuizManager {
         // paskaiciuoti taskus uz neteisinga atsakyma, taskai yra dauginami is dabartinio is eiles neatsakytu klausimu skaiciaus
         wrongAnswersInARow += 1
         correctAnswersInARow = 0
+        
         let calculatedPoints = pointsForAnswer * wrongAnswersInARow
         points -= calculatedPoints
         currentUser.calculatePointsForWrongAnswer(points: calculatedPoints)

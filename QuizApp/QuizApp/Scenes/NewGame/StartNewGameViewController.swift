@@ -9,7 +9,7 @@ import UIKit
 class StartNewGameViewController: UIViewController {
     var questionProvider: QuestionProvider!
     var quizManager: QuizManager!
-    
+
 
 //    init(questionProvider: QuestionProvider) {
 //        self.questionProvider = questionProvider
