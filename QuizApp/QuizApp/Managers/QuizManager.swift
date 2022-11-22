@@ -20,7 +20,7 @@ final class QuizManager {
     private var wrongAnswersInARow = 0
     
     private let currentUser: User
-    private let questions: [Question] = []
+    private let questions: [Question]
 
     init(user: User, questions: [Question]) {
         self.currentUser = user
