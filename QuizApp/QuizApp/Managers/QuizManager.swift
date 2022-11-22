@@ -17,13 +17,14 @@ final class QuizManager {
     var points = 0
     var correctAnswersInARow = 0
     var wrongAnswersInARow = 0
+    var lastQuestionPoints = 0
     
     private let currentUser: User
      let questions: [Question]
 
     init(user: User, questions: [Question]) {
         self.currentUser = user
-        self.questions = questions
+        self.questions   = questions
     }
     
     func calculatePoints(selectedAnswerIndex: Int) -> Int {
@@ -58,6 +59,7 @@ final class QuizManager {
         wrongAnswersInARow = 0
 
         let calculatedPoints = pointsForAnswer * correctAnswersInARow
+        lastQuestionPoints = calculatedPoints
         points += calculatedPoints
         currentUser.calculatePointsForWrongAnswer(points: points)
     }
@@ -67,6 +69,7 @@ final class QuizManager {
         wrongAnswersInARow += 1
         correctAnswersInARow = 0
         let calculatedPoints = pointsForAnswer * wrongAnswersInARow
+       lastQuestionPoints = calculatedPoints
         points -= calculatedPoints
         currentUser.calculatePointsForWrongAnswer(points: calculatedPoints)
     }

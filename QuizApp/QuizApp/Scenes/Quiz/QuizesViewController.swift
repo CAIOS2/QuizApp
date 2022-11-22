@@ -17,6 +17,7 @@ class QuizesViewController: UIViewController {
         // Do any additional setup after loading the view.
         getQuestionLabel()
         getAnswersLabels()
+        pointsCounterLabel.text = ""
     }
     
 
@@ -55,15 +56,16 @@ class QuizesViewController: UIViewController {
         print("Correct answer index: \(quizManager.questions[quizManager.currentQuestionIndex].correctAnswerIndex))")
     }
     
-    // TODO: Need to solve problem(get correct value) in pointsLabel
     
     @IBAction func blueButtonTapped(_ sender: Any) {
         if quizManager.questions[quizManager.currentQuestionIndex].correctAnswerIndex == 0 {
-            pointsCounterLabel.text = "Correct, you got \(quizManager.calculatePoints(selectedAnswerIndex: 0)) points!"
+            quizManager.calculatePoints(selectedAnswerIndex: 0)
+            pointsCounterLabel.text = "Correct, you got \(quizManager.lastQuestionPoints) points!"
             pointsLabel.text = "Points: \(quizManager.points)"
             print("Blue true")
         } else {
-            pointsCounterLabel.text = "Incorrect, you lose \(quizManager.calculatePoints(selectedAnswerIndex: 0)) points!"
+            quizManager.calculatePoints(selectedAnswerIndex: 0)
+            pointsCounterLabel.text = "Incorrect, you lose \(quizManager.lastQuestionPoints) points!"
             pointsLabel.text = "Points: \(quizManager.points)"
             print("Blue false")
         }
@@ -78,15 +80,17 @@ class QuizesViewController: UIViewController {
     
     
     @IBAction func greenButtonTapped(_ sender: Any) {
+        quizManager.calculatePoints(selectedAnswerIndex: 0)
         if quizManager.questions[quizManager.currentQuestionIndex].correctAnswerIndex == 1 {
-            pointsCounterLabel.text = "Correct, you got \(quizManager.calculatePoints(selectedAnswerIndex: 1)) points!"
+            pointsCounterLabel.text = "Correct, you got \(quizManager.lastQuestionPoints) points!"
             pointsLabel.text = "Points: \(quizManager.points)"
             print("Green true")
         } else {
-            pointsCounterLabel.text = "Incorrect, you lose \(quizManager.calculatePoints(selectedAnswerIndex: 1)) points!"
+            pointsCounterLabel.text = "Incorrect, you lose \(quizManager.lastQuestionPoints) points!"
             pointsLabel.text = "Points: \(quizManager.points)"
             print("Green false")
         }
+        
         if quizManager.checkIfQuizHasMoreQuestions() {
             quizManager.loadQuestion(isInitialQuestion: false)
 
@@ -98,15 +102,17 @@ class QuizesViewController: UIViewController {
     
     
     @IBAction func redButtonTapped(_ sender: Any) {
+        quizManager.calculatePoints(selectedAnswerIndex: 2)
         if quizManager.questions[quizManager.currentQuestionIndex].correctAnswerIndex == 2 {
-            pointsCounterLabel.text = "Correct, you got \(quizManager.calculatePoints(selectedAnswerIndex: 2)) points!"
+            pointsCounterLabel.text = "Correct, you got \(quizManager.lastQuestionPoints) points!"
             pointsLabel.text = "Points: \(quizManager.points)"
             print("Red true")
         } else {
-            pointsCounterLabel.text = "Incorrect, you lose \(quizManager.calculatePoints(selectedAnswerIndex: 2)) points!"
+            pointsCounterLabel.text = "Incorrect, you lose \(quizManager.lastQuestionPoints) points!"
             pointsLabel.text = "Points: \(quizManager.points)"
             print("Red false")
         }
+        
         if quizManager.checkIfQuizHasMoreQuestions() {
             quizManager.loadQuestion(isInitialQuestion: false)
 
@@ -117,15 +123,17 @@ class QuizesViewController: UIViewController {
     
     
     @IBAction func yellowButtonTapped(_ sender: Any) {
+        quizManager.calculatePoints(selectedAnswerIndex: 3)
         if quizManager.questions[quizManager.currentQuestionIndex].correctAnswerIndex == 3 {
-            pointsCounterLabel.text = "Correct, you got \(quizManager.calculatePoints(selectedAnswerIndex: 3)) points!"
+            pointsCounterLabel.text = "Correct, you got \(quizManager.lastQuestionPoints) points!"
             pointsLabel.text = "Points: \(quizManager.points)"
             print("yellow true")
         } else {
-            pointsCounterLabel.text = "Incorrect, you lose \(quizManager.calculatePoints(selectedAnswerIndex: 3)) points!"
+            pointsCounterLabel.text = "Incorrect, you lose \(quizManager.lastQuestionPoints) points!"
             pointsLabel.text = "Points: \(quizManager.points)"
             print("Yellow false")
         }
+        
         if quizManager.checkIfQuizHasMoreQuestions() {
             quizManager.loadQuestion(isInitialQuestion: false)
 
