@@ -11,11 +11,17 @@ class QuizesViewController: UIViewController {
     
     var quizManager: QuizManager!
     
+    var questionId: Int = 0
+    
     //MARK: - Override
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+    }
+    
+    func loadQuestion() {
+        
     }
     
     //MARK: Outlets
