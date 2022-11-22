@@ -27,21 +27,24 @@ class QuizesViewController: UIViewController {
     @IBOutlet private weak var yellowButton: UIButton!
     @IBOutlet private weak var pointsLabel: UILabel!
     @IBOutlet private weak var questionLabel: UILabel!
-    @IBOutlet weak var currentResultsLabel: UILabel!
+    @IBOutlet weak var resultLabel: UILabel!
     
      // MARK: - Navigation
     
     @IBAction func blueButtonTapped(_ sender: Any) {
-
+        correctAnswer(index: 0)
     }
     
     @IBAction func greenButtonTapped(_ sender: Any) {
+       correctAnswer(index: 1)
     }
     
     @IBAction func redButtonTapped(_ sender: Any) {
+        correctAnswer(index: 2)
     }
     
     @IBAction func yellowButtonTapped(_ sender: Any) {
+        correctAnswer(index: 3)
     }
     
     func loadNextQuestion(isInitialQuestion: Bool) {
@@ -54,8 +57,13 @@ class QuizesViewController: UIViewController {
         
     }
     
-
+    func correctAnswer(index: Int) {
+       var points = quizManager.calculatePoints(selectedAnswerIndex: index)
+        pointsLabel.text = "\(points)"
+        loadNextQuestion(isInitialQuestion: false)
+    }
     
+    func 
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
      //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
