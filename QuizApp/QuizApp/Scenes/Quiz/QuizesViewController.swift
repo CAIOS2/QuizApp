@@ -10,7 +10,8 @@ import UIKit
 class QuizesViewController: UIViewController {
     
     var quizManager: QuizManager!
-    var question:
+    var question: Question!
+    var selectedIndex: Int = 0
     
     //MARK: - Override
     override func viewDidLoad() {
@@ -38,9 +39,30 @@ class QuizesViewController: UIViewController {
     
     @IBAction func answerTapped(_ sender: UIButton) {
         
-        if sender.title == self.question.answers[self.question.correctAnswerIndex] {}
+    switch sender {
+    case blueButton:
+        selectedIndex = 0
+    case greenButton:
+        selectedIndex = 1
+    case redButton:
+        selectedIndex = 2
+    case yellowButton:
+        selectedIndex = 3
+    default:
+        break
+        }
+        let points = quizManager.calculatePoints(selectedAnswerIndex: selectedIndex)
+        pointsLabel.text = String(points)
+            resultLabel.text = "Visai gerai"
         
+        question = quizManager.loadQuestion(isInitialQuestion: false)
+        questionLabel.text = question.questionText
+        blueButton.setTitle(question.answers[0], for: .normal)
+        greenButton.setTitle(question.answers[1], for: .normal)
+        redButton.setTitle(question.answers[2], for: .normal)
+        yellowButton.setTitle(question.answers[3], for: .normal)
+        }
     }
     
     
-}
+
