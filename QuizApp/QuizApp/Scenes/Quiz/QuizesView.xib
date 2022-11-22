@@ -16,6 +16,7 @@
                 <outlet property="pointsLabel" destination="MGf-g2-ZEk" id="tJo-88-GFe"/>
                 <outlet property="questionLabel" destination="mNa-bY-oSK" id="TOA-hH-3tQ"/>
                 <outlet property="redButton" destination="0iJ-aB-akM" id="puo-PB-EkS"/>
+                <outlet property="resultLabel" destination="Bn4-aI-tr4" id="t1y-3L-NlD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="yellowButton" destination="bjx-or-Lrs" id="CD2-yG-Vpf"/>
             </connections>
@@ -48,6 +49,9 @@
                     <state key="normal" title="Button">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="answerTapped:" destination="-1" eventType="touchUpInside" id="w9d-UU-mVd"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0iJ-aB-akM">
                     <rect key="frame" x="15" y="474.33333333333331" width="176.66666666666666" height="176.33333333333331"/>
@@ -60,6 +64,9 @@
                     <state key="normal" title="Button">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="answerTapped:" destination="-1" eventType="touchUpInside" id="3gL-ew-12Z"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i55-Ub-fYD">
                     <rect key="frame" x="201.66666666666663" y="287.66666666666669" width="176.33333333333337" height="176.66666666666669"/>
@@ -72,6 +79,9 @@
                     <state key="normal" title="Button">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="answerTapped:" destination="-1" eventType="touchUpInside" id="fGh-vJ-X4a"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjx-or-Lrs">
                     <rect key="frame" x="201.66666666666663" y="474.33333333333331" width="176.33333333333337" height="176.33333333333331"/>
@@ -84,7 +94,16 @@
                     <state key="normal" title="Button">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="answerTapped:" destination="-1" eventType="touchUpInside" id="IC2-JP-2lZ"/>
+                    </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bn4-aI-tr4">
+                    <rect key="frame" x="20" y="700.66666666666663" width="353" height="20.333333333333371"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="labelColor"/>
@@ -93,9 +112,11 @@
                 <constraint firstItem="0iJ-aB-akM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="45f-bk-Ybv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="i55-Ub-fYD" secondAttribute="trailing" constant="15" id="5fS-MT-fFG"/>
                 <constraint firstItem="67W-4o-N0f" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-5" id="6Di-Xt-sQY"/>
+                <constraint firstItem="Bn4-aI-tr4" firstAttribute="top" secondItem="0iJ-aB-akM" secondAttribute="bottom" constant="50" id="AHz-or-PMz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mNa-bY-oSK" secondAttribute="trailing" constant="20" id="JZN-nY-m8X"/>
                 <constraint firstItem="mNa-bY-oSK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="LZa-40-6R0"/>
                 <constraint firstItem="67W-4o-N0f" firstAttribute="top" secondItem="MGf-g2-ZEk" secondAttribute="bottom" constant="10" id="M5h-cB-Qyj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Bn4-aI-tr4" secondAttribute="trailing" constant="20" id="NLB-Uq-bZI"/>
                 <constraint firstItem="i55-Ub-fYD" firstAttribute="top" secondItem="MGf-g2-ZEk" secondAttribute="bottom" constant="10" id="Rmg-DS-IDu"/>
                 <constraint firstItem="0iJ-aB-akM" firstAttribute="top" secondItem="67W-4o-N0f" secondAttribute="bottom" constant="10" id="V07-6h-4MR"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MGf-g2-ZEk" secondAttribute="trailing" constant="20" id="YOP-F1-I8u"/>
@@ -103,12 +124,14 @@
                 <constraint firstItem="bjx-or-Lrs" firstAttribute="top" secondItem="i55-Ub-fYD" secondAttribute="bottom" constant="10" id="b6e-NO-Q2E"/>
                 <constraint firstItem="i55-Ub-fYD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="5" id="kmh-Sg-ZMB"/>
                 <constraint firstItem="0iJ-aB-akM" firstAttribute="width" secondItem="67W-4o-N0f" secondAttribute="width" id="llw-Fs-W6e"/>
+                <constraint firstItem="Bn4-aI-tr4" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="p9S-mD-Y4Z"/>
                 <constraint firstItem="MGf-g2-ZEk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="pvW-F0-gb6"/>
                 <constraint firstItem="bjx-or-Lrs" firstAttribute="width" secondItem="i55-Ub-fYD" secondAttribute="width" id="uJE-Qv-lx1"/>
                 <constraint firstItem="MGf-g2-ZEk" firstAttribute="top" secondItem="mNa-bY-oSK" secondAttribute="bottom" constant="150" id="w6A-aM-YqM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bjx-or-Lrs" secondAttribute="trailing" constant="15" id="yx8-8A-BeY"/>
+                <constraint firstItem="Bn4-aI-tr4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="zAj-5k-xkM"/>
             </constraints>
-            <point key="canvasLocation" x="-152" y="23"/>
+            <point key="canvasLocation" x="-153.43511450381678" y="22.535211267605636"/>
         </view>
     </objects>
     <resources>
@@ -120,6 +143,9 @@
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
