@@ -18,9 +18,14 @@ final class QuizManager {
     private var points = 0
     private var correctAnswersInARow = 0
     private var wrongAnswersInARow = 0
-    var currentUser: User!
     
-    var questions: [Question] = []
+    private let currentUser: User
+    private let questions: [Question] = []
+
+    init(user: User, questions: [Question]) {
+        self.currentUser = user
+        self.questions = questions
+    }
     
     func calculatePoints(selectedAnswerIndex: Int) -> Int {
         // paziureti ar useris teisingai atsake klausima

@@ -8,9 +8,7 @@ import UIKit
 
 class StartNewGameViewController: UIViewController {
     var questionProvider: QuestionProvider!
-    
-    var questions: [Question] = []
-    
+    var quizManager: QuizManager!
 //    init(questionProvider: QuestionProvider) {
 //        self.questionProvider = questionProvider
 //        super.init()
@@ -19,7 +17,9 @@ class StartNewGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         questionProvider.getQuestions { [unowned self] questions in
-            self.questions = questions
+            self.quizManager = QuizManager(
+                user: User(username: "Useris"),
+                questions: questions)
         }
         // Do any additional setup after loading the view.
     }
@@ -27,7 +27,7 @@ class StartNewGameViewController: UIViewController {
     // MARK: - Actions
     @IBAction private func playGameButtonTapped(_ sender: Any) {
         let quizesVC = QuizesViewController()
-        quizesVC.questions = questions
+        quizesVC.quizManager = quizManager
         self.navigationController?.pushViewController(quizesVC, animated: true)
     }
     

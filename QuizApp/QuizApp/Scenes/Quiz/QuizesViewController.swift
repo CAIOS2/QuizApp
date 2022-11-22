@@ -9,7 +9,7 @@ import UIKit
 
 class QuizesViewController: UIViewController {
     
-    var questions: [Question] = []
+    var quizManager: QuizManager!
     
     //MARK: - Override
     override func viewDidLoad() {
