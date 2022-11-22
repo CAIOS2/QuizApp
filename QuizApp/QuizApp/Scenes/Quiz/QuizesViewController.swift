@@ -15,6 +15,12 @@ class QuizesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let question = quizManager.loadQuestion(isInitialQuestion: true)
+        questionLabel.text = question.questionText
+        blueButton.setTitle(question.answers[0], for: .normal)
+        greenButton.setTitle(question.answers[1], for: .normal)
+        redButton.setTitle(question.answers[2], for: .normal)
+        yellowButton.setTitle(question.answers[3], for: .normal)
         // Do any additional setup after loading the view.
     }
     
