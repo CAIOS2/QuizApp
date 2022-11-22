@@ -12,12 +12,11 @@ class QuizConstants {
 }
 
 final class QuizManager {
-    private let pointsForAnswer = 2
-    
+    let pointsForAnswer = 2
     var currentQuestionIndex = 0
     var points = 0
-    private var correctAnswersInARow = 0
-    private var wrongAnswersInARow = 0
+    var correctAnswersInARow = 0
+    var wrongAnswersInARow = 0
     
     private let currentUser: User
      let questions: [Question]
@@ -53,7 +52,7 @@ final class QuizManager {
     }
    
     // MARK: - Helpers
-    func calculatePointsForCorrectAnswer() {
+    private func calculatePointsForCorrectAnswer() {
         // paskaiciuoti taskus uz teisinga atsakyma, taskai yra dauginami is dabartinio is eiles atsakytu klausimu skaiciaus
         correctAnswersInARow += 1
         wrongAnswersInARow = 0
@@ -63,7 +62,7 @@ final class QuizManager {
         currentUser.calculatePointsForWrongAnswer(points: points)
     }
     
-    func calculatePointsForWrongAnswer() {
+   private func calculatePointsForWrongAnswer() {
         // paskaiciuoti taskus uz neteisinga atsakyma, taskai yra dauginami is dabartinio is eiles neatsakytu klausimu skaiciaus
         wrongAnswersInARow += 1
         correctAnswersInARow = 0

@@ -54,6 +54,7 @@ class QuizesViewController: UIViewController {
         print("Correct answer index: \(quizManager.questions[quizManager.currentQuestionIndex].correctAnswerIndex))")
     }
     
+    // TODO: Need to solve problem(get correct value) in pointsLabel
     
     @IBAction func blueButtonTapped(_ sender: Any) {
         if quizManager.questions[quizManager.currentQuestionIndex].correctAnswerIndex == 0 {
@@ -65,7 +66,11 @@ class QuizesViewController: UIViewController {
             pointsLabel.text = "Points: \(quizManager.points)"
             print("Blue false")
         }
-        
+        if quizManager.checkIfQuizHasMoreQuestions() {
+            quizManager.loadQuestion(isInitialQuestion: true)
+            getQuestionLabel()
+            getAnswersLabels()
+        }
     }
     
     
@@ -79,6 +84,12 @@ class QuizesViewController: UIViewController {
             pointsLabel.text = "Points: \(quizManager.points)"
             print("Green false")
         }
+        if quizManager.checkIfQuizHasMoreQuestions() {
+            quizManager.loadQuestion(isInitialQuestion: true)
+            getQuestionLabel()
+            getAnswersLabels()
+        }
+        
     }
     
     
@@ -92,6 +103,11 @@ class QuizesViewController: UIViewController {
             pointsLabel.text = "Points: \(quizManager.points)"
             print("Red false")
         }
+        if quizManager.checkIfQuizHasMoreQuestions() {
+            quizManager.loadQuestion(isInitialQuestion: true)
+            getQuestionLabel()
+            getAnswersLabels()
+        }
     }
     
     
@@ -104,6 +120,11 @@ class QuizesViewController: UIViewController {
             pointsCounterLabel.text = "Incorrect, you lose \(quizManager.calculatePoints(selectedAnswerIndex: 3)) points!"
             pointsLabel.text = "Points: \(quizManager.points)"
             print("Yellow false")
+        }
+        if quizManager.checkIfQuizHasMoreQuestions() {
+            quizManager.loadQuestion(isInitialQuestion: true)
+            getQuestionLabel()
+            getAnswersLabels()
         }
     }
     
