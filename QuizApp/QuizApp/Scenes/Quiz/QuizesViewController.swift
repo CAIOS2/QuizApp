@@ -71,6 +71,8 @@ class QuizesViewController: UIViewController {
             quizManager.loadQuestion(isInitialQuestion: false)
             getQuestionLabel()
             getAnswersLabels()
+        } else {
+            showLoginErrorMessage(nil)
         }
     }
     
@@ -133,6 +135,13 @@ class QuizesViewController: UIViewController {
     }
     
     
+    func showLoginErrorMessage(_ errorMessage: String?) {
+        let alerAction = UIAlertAction(title: "Close", style: UIAlertAction.Style.destructive, handler: nil)
+        let alertController = UIAlertController(title: "Done, you answered all quiz questions", message: errorMessage, preferredStyle: .alert)
+        
+        alertController.addAction(alerAction)
+        self.present(alertController, animated: true)
+    }
     
     
     
