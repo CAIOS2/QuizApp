@@ -27,6 +27,22 @@ final class QuizManager {
         self.questions = questions
     }
     
+    func getPoints() -> Int {
+        return points
+    }
+    
+    func getCorrectAnswersInARow() -> Int {
+        return correctAnswersInARow
+    }
+    
+    func getWrongAnswersInARow() -> Int {
+        return wrongAnswersInARow
+    }
+    
+    func getUsername() -> String {
+        return currentUser.username
+    }
+    
     func calculatePoints(selectedAnswerIndex: Int) -> Int {
         // paziureti ar useris teisingai atsake klausima
         if questions[currentQuestionIndex].correctAnswerIndex == selectedAnswerIndex {
@@ -38,14 +54,8 @@ final class QuizManager {
         return points
     }
     
-    func loadQuestion(isInitialQuestion: Bool) -> Question {
-        // uzkrauti klausima
-        if isInitialQuestion {
-            currentQuestionIndex = 0
-        } else {
-            currentQuestionIndex += 1
-        }
-        return questions[currentQuestionIndex]
+    func loadQuestion(i: Int) -> Question {
+        return questions[i]
     }
 
     func checkIfQuizHasMoreQuestions() -> Bool {

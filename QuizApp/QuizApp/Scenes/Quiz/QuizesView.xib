@@ -25,20 +25,20 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNa-bY-oSK">
-                    <rect key="frame" x="20" y="79" width="353" height="27.666666666666671"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNa-bY-oSK">
+                    <rect key="frame" x="20" y="79" width="353" height="28.666666666666671"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGf-g2-ZEk">
-                    <rect key="frame" x="20" y="256.66666666666669" width="353" height="21"/>
+                    <rect key="frame" x="20" y="257.66666666666669" width="353" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67W-4o-N0f">
-                    <rect key="frame" x="15" y="287.66666666666669" width="176.66666666666666" height="176.66666666666669"/>
+                    <rect key="frame" x="15" y="288.66666666666669" width="176.66666666666666" height="176.66666666666669"/>
                     <color key="backgroundColor" systemColor="linkColor"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="67W-4o-N0f" secondAttribute="height" multiplier="1:1" id="6oe-u7-ca7"/>
@@ -48,9 +48,12 @@
                     <state key="normal" title="Button">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="pressBlue:" destination="-1" eventType="touchUpInside" id="TVm-S3-TVf"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0iJ-aB-akM">
-                    <rect key="frame" x="15" y="474.33333333333331" width="176.66666666666666" height="176.33333333333331"/>
+                    <rect key="frame" x="15" y="475.33333333333331" width="176.66666666666666" height="176.33333333333331"/>
                     <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="0iJ-aB-akM" secondAttribute="height" multiplier="1:1" id="Q23-o9-NKC"/>
@@ -60,9 +63,12 @@
                     <state key="normal" title="Button">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="pressRed:" destination="-1" eventType="touchUpInside" id="c8h-Tq-EzT"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i55-Ub-fYD">
-                    <rect key="frame" x="201.66666666666663" y="287.66666666666669" width="176.33333333333337" height="176.66666666666669"/>
+                    <rect key="frame" x="201.66666666666663" y="288.66666666666669" width="176.33333333333337" height="176.66666666666669"/>
                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="i55-Ub-fYD" secondAttribute="height" multiplier="1:1" id="AgK-Yd-Hi6"/>
@@ -72,9 +78,12 @@
                     <state key="normal" title="Button">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="pressGreen:" destination="-1" eventType="touchUpInside" id="ejV-I1-dx7"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjx-or-Lrs">
-                    <rect key="frame" x="201.66666666666663" y="474.33333333333331" width="176.33333333333337" height="176.33333333333331"/>
+                    <rect key="frame" x="201.66666666666663" y="475.33333333333331" width="176.33333333333337" height="176.33333333333331"/>
                     <color key="backgroundColor" systemColor="systemYellowColor"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="bjx-or-Lrs" secondAttribute="height" multiplier="1:1" id="ERh-Lr-g0Z"/>
@@ -84,6 +93,9 @@
                     <state key="normal" title="Button">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="pressYellow:" destination="-1" eventType="touchUpInside" id="hXZ-Lk-CCa"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

@@ -6,6 +6,8 @@
 //
 import UIKit
 
+
+
 class Storage {
     static var quizManager: QuizManager? = nil
     
@@ -33,7 +35,7 @@ class StartNewGameViewController: UIViewController {
     // MARK: - Actions
     @IBAction private func playGameButtonTapped(_ sender: Any) {
         let quizesVC = QuizesViewController()
-        quizesVC.quizManager = quizManager
+//        quizesVC.quizManager = quizManager
         self.navigationController?.pushViewController(quizesVC, animated: true)
     }
     
