@@ -36,6 +36,8 @@ class QuizesViewController: UIViewController {
     func getQuestionLabel() {
         let question = quizManager.questions[quizManager.currentQuestionIndex].questionText
         questionLabel.text = question
+        
+        
     }
     
     func getAnswersLabels() {
@@ -48,18 +50,59 @@ class QuizesViewController: UIViewController {
         greenButton.setTitle(answerGreen, for: .normal)
         redButton.setTitle(answerRed, for: .normal)
         yellowButton.setTitle(answerYellow, for: .normal)
+        
+        print("Correct answer index: \(quizManager.questions[quizManager.currentQuestionIndex].correctAnswerIndex))")
+    }
+    
+    
+    @IBAction func blueButtonTapped(_ sender: Any) {
+        if quizManager.questions[quizManager.currentQuestionIndex].correctAnswerIndex == 0 {
+            print("Blue true")
+        } else {
+            print("Blue false")
+        }
+        
+    }
+    
+    
+    @IBAction func greenButtonTapped(_ sender: Any) {
+        if quizManager.questions[quizManager.currentQuestionIndex].correctAnswerIndex == 1 {
+            print("Green true")
+        } else {
+            print("Green false")
+        }
+    }
+    
+    
+    @IBAction func redButtonTapped(_ sender: Any) {
+        if quizManager.questions[quizManager.currentQuestionIndex].correctAnswerIndex == 2 {
+            print("Red true")
+        } else {
+            print("Red false")
+        }
+    }
+    
+    
+    @IBAction func yellowButtonTapped(_ sender: Any) {
+        if quizManager.questions[quizManager.currentQuestionIndex].correctAnswerIndex == 3 {
+            print("yellow true")
+        } else {
+            print("Yellow false")
+        }
     }
     
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+    
     
 }
+
+
+
+
+
+
+
+
+
