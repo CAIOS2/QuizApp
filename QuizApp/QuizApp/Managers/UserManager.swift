@@ -7,9 +7,10 @@
 
 import Foundation
 
-//final class UserManager {
-//    // Truksta kodo
-//}
+final class UserManager {
+    var users = [User]()
+  
+}
 //
 //extension UserManager: NewGameViewDelegate {
 //    func createNewUser(username: String) -> User {
