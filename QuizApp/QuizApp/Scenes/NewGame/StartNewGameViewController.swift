@@ -6,6 +6,10 @@
 //
 import UIKit
 
+//protocol NewGameViewDelegate: AnyObject {
+//    func createNewUser(username: String) -> User
+//}
+
 class StartNewGameViewController: UIViewController {
     var questionProvider: QuestionProvider!
     var quizManager: QuizManager!

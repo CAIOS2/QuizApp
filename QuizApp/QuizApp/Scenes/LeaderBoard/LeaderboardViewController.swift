@@ -7,6 +7,11 @@
 
 import UIKit
 
+//protocol LeaderboardManaging: AnyObject {
+//    func hasAnyonePlayed() -> Bool
+//    func allPlayers() -> [User]
+//}
+
 class LeaderboardViewController: UIViewController {
 
     override func viewDidLoad() {
