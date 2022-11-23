@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+//class LeaderboardManager {
+//    func sortTopThreeUsersByPoints(users: [User]) -> [User] {
+//       // Truksta kodo
+//    }
+//}
