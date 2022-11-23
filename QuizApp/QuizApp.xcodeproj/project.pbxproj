@@ -25,6 +25,7 @@
 		92E778712926A08200D60578 /* QuizesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92E7786F2926A08200D60578 /* QuizesView.xib */; };
 		A07BADA72926C88800A11B8E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07BADA52926C88800A11B8E /* HomeViewController.swift */; };
 		A07BADA82926C88800A11B8E /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A07BADA62926C88800A11B8E /* HomeView.xib */; };
+		A09E7B41292E810E008967DF /* QuestionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09E7B40292E810E008967DF /* QuestionProvider.swift */; };
 		D58C6635292575C700EE4C15 /* StartNewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C6634292575C700EE4C15 /* StartNewGameViewController.swift */; };
 		D58C66372925761800EE4C15 /* StartNewGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D58C66362925761800EE4C15 /* StartNewGameView.xib */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,7 @@
 		92E7786F2926A08200D60578 /* QuizesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizesView.xib; sourceTree = "<group>"; };
 		A07BADA52926C88800A11B8E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A07BADA62926C88800A11B8E /* HomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
+		A09E7B40292E810E008967DF /* QuestionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionProvider.swift; sourceTree = "<group>"; };
 		D58C6634292575C700EE4C15 /* StartNewGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNewGameViewController.swift; sourceTree = "<group>"; };
 		D58C66362925761800EE4C15 /* StartNewGameView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartNewGameView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				68A6CDB12926C1D70000F5E1 /* QuestionRepository.swift */,
+				A09E7B40292E810E008967DF /* QuestionProvider.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				68A6CDA92926BFE50000F5E1 /* QuizManager.swift in Sources */,
 				68A6CDB22926C1D70000F5E1 /* QuestionRepository.swift in Sources */,
 				92E778702926A08200D60578 /* QuizesViewController.swift in Sources */,
+				A09E7B41292E810E008967DF /* QuestionProvider.swift in Sources */,
 				68A6CDA62926BFB00000F5E1 /* Question.swift in Sources */,
 				A07BADA72926C88800A11B8E /* HomeViewController.swift in Sources */,
 				84E256712925586900B02E53 /* QuizApp.xcdatamodeld in Sources */,
