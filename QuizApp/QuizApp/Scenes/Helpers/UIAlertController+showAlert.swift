@@ -9,17 +9,18 @@ import UIKit
 
 
 extension UIAlertController {
-    
-    static func showErrorAlert(error: String, message: String) -> UIAlertController {
-        
-        
-        let action = UIAlertAction(title: "Ok", style: .default)
-            
-        let alert =  UIAlertController(title: "message", message: "error", preferredStyle: .alert)
-            alert.addAction(action)
-            
-        return alert
-        
-    }
-    
+
+  static func showErrorAlert(title: String, message: String, controller: UIViewController) {
+
+
+    let action = UIAlertAction(title: "Ok", style: .default)
+
+    let alert =  UIAlertController(title:title, message: message, preferredStyle: .alert)
+    alert.addAction(action)
+
+    controller.present(alert, animated: true)
+
+  }
+
 }
+
