@@ -6,14 +6,6 @@
 //
 import UIKit
 
-
-
-class Storage {
-    static var quizManager: QuizManager? = nil
-    
-    private init() {}
-}
-
 class StartNewGameViewController: UIViewController {
     var questionProvider: QuestionProvider!
     var quizManager: QuizManager!
@@ -25,7 +17,7 @@ class StartNewGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         questionProvider.getQuestions { questions in
-            Storage.quizManager = QuizManager(
+            self.quizManager = QuizManager(
                 user: User(username: "Useris"),
                 questions: questions)
         }
@@ -35,7 +27,7 @@ class StartNewGameViewController: UIViewController {
     // MARK: - Actions
     @IBAction private func playGameButtonTapped(_ sender: Any) {
         let quizesVC = QuizesViewController()
-//        quizesVC.quizManager = quizManager
+        quizesVC.quizManager = quizManager
         self.navigationController?.pushViewController(quizesVC, animated: true)
     }
     

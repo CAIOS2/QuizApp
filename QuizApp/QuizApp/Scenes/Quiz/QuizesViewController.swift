@@ -8,9 +8,10 @@
 import UIKit
 
 class QuizesViewController: UIViewController {
-    
+    var quizManager: QuizManager!
     var questionId: Int = 0
-    var question: Question? = nil
+    var question: Question!
+    var points: Int = 0
     
     //MARK: - Override
     override func viewDidLoad() {
@@ -19,15 +20,25 @@ class QuizesViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-   func loadQuestion() {
-        
-        self.question = Storage.quizManager!.loadQuestion(i: questionId)
-        questionLabel.text! = self.question!.questionText
-        
-        for i in 0...3 {
-            
-            loadToWhichButton(answer: self.question!.answers[i], i: i)
+    func isInitialQuestion() -> Bool {
+        if questionId == 0 {
+            return false
         }
+        return true
+    }
+    
+   func loadQuestion() {
+       self.question = self.quizManager!.loadQuestion(isInitialQuestion: isInitialQuestion())
+        questionLabel.text! = self.question!.questionText
+        for i in 0...3 {
+            loadToWhichButton(answer: self.question!.answers[i], i: i)
+       }
+    }
+    
+    func finishGame() {
+        let leaderboardVC = LeaderboardViewController()
+        leaderboardVC.quizManager = quizManager
+        self.navigationController?.pushViewController(leaderboardVC, animated: true)
     }
     
     func loadToWhichButton(answer: String, i: Int) {
@@ -43,41 +54,37 @@ class QuizesViewController: UIViewController {
     //MARK: Outlets
     
     func updatePointsLabel() {
-        pointsLabel.text! = "Points: \(Storage.quizManager!.getPoints())"
+        pointsLabel.text! = "Points: \(self.points)"
     }
     
     func switchToNextQuestion(_ i: Int) {
+        self.points = self.quizManager!.calculatePoints(selectedAnswerIndex: i)
         if self.question!.correctAnswerIndex == i {
-            questionId += 1
-            if questionId > 3 {
-                // switch to result of answers
-                showAlert(title: "Finish", "Jus surinkot \(Storage.quizManager!.getPoints()) taškus")
+            if self.questionId == 3 {
+                self.questionId = 0
+                finishGame()
+                return
             }
             loadQuestion()
+            updatePointsLabel()
+            self.questionId += 1
+        } else {
             updatePointsLabel()
         }
     }
     
     @IBAction func pressGreen(_ sender: Any) {
-        switchToNextQuestion(1)
-        let _ = Storage.quizManager!.calculatePoints(selectedAnswerIndex: 1)
-        updatePointsLabel()
+        switchToNextQuestion(2)
     }
     @IBAction func pressBlue(_ sender: Any) {
-        switchToNextQuestion(0)
-        let _ = Storage.quizManager!.calculatePoints(selectedAnswerIndex: 0)
-        updatePointsLabel()
+        switchToNextQuestion(1)
     }
     @IBAction func pressRed(_ sender: Any) {
-        switchToNextQuestion(2)
-        let _ = Storage.quizManager!.calculatePoints(selectedAnswerIndex: 2)
-        updatePointsLabel()
+        switchToNextQuestion(3)
     }
 
     @IBAction func pressYellow(_ sender: Any) {
-        switchToNextQuestion(3)
-        let _ = Storage.quizManager!.calculatePoints(selectedAnswerIndex: 3)
-        updatePointsLabel()
+        switchToNextQuestion(4)
     }
     
     @IBOutlet private weak var blueButton: UIButton!
@@ -87,13 +94,7 @@ class QuizesViewController: UIViewController {
     @IBOutlet private weak var pointsLabel: UILabel!
     @IBOutlet private weak var questionLabel: UILabel!
     
-    func showAlert(title: String, _ message: String) {
-        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertController.addAction(alertAction)
-        self.present(alertController, animated: true)
-    }
+    
 }
 
 

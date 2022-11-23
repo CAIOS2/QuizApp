@@ -54,8 +54,14 @@ final class QuizManager {
         return points
     }
     
-    func loadQuestion(i: Int) -> Question {
-        return questions[i]
+    func loadQuestion(isInitialQuestion: Bool) -> Question {
+        // uzkrauti klausima
+        if isInitialQuestion {
+            currentQuestionIndex = 0
+        } else {
+            currentQuestionIndex += 1
+        }
+        return questions[currentQuestionIndex]
     }
 
     func checkIfQuizHasMoreQuestions() -> Bool {
