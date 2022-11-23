@@ -13,6 +13,7 @@ class StartNewGameViewController: UIViewController {
 //        self.questionProvider = questionProvider
 //        super.init()
 //    }
+    @IBOutlet private weak var usernameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,18 @@ class StartNewGameViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction private func playGameButtonTapped(_ sender: Any) {
+        if usernameTextField.text! == "" {
+            UIAlertController.showErrorAlert(
+                title: "Error",
+                message: "Please, enter username",
+                controller: self
+            ) {
+                _ in
+            }
+            return
+        }
+        
+        
         let quizesVC = QuizesViewController()
         quizesVC.quizManager = quizManager
         self.navigationController?.pushViewController(quizesVC, animated: true)

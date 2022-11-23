@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartNewGameViewController" customModule="QuizApp" customModuleProvider="target">
             <connections>
+                <outlet property="usernameTextField" destination="l9v-GQ-uXm" id="51d-q6-LeO"/>
                 <outlet property="view" destination="gag-DJ-eec" id="56C-1N-tZl"/>
             </connections>
         </placeholder>
@@ -19,13 +20,13 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Star new game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSs-mY-Ui3">
-                    <rect key="frame" x="92.666666666666671" y="197" width="204.66666666666663" height="38.333333333333343"/>
+                    <rect key="frame" x="92.666666666666671" y="150" width="204.66666666666663" height="38.333333333333343"/>
                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l9v-GQ-uXm">
-                    <rect key="frame" x="36" y="355.33333333333331" width="318" height="48"/>
+                    <rect key="frame" x="36" y="308.33333333333331" width="318" height="48"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="c1P-yI-UxI"/>
                     </constraints>
@@ -33,7 +34,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rtn-Y5-MvP">
-                    <rect key="frame" x="36" y="419.33333333333331" width="318" height="48"/>
+                    <rect key="frame" x="36" y="372.33333333333331" width="318" height="48"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" title="Play!">
                         <fontDescription key="titleFontDescription" type="system" pointSize="23"/>
