@@ -57,17 +57,22 @@ protocol QuestionProvider {
 
 // MARK: - Classes
 class Question {
-    var questionText: String
-    var answers: [String]
-    var category: String
-    var correctAnswerIndex: Int
+    let questionText: String
+    let answers: [String]
+    let category: String
+    let correctAnswerIndex: Int
     
-    init(questionText:  String, answers: [String], category: String, correctAnswerIndex: Int) {
-        self.questionText = questionText
-        self.answers = answers
-        self.category = category
-        self.correctAnswerIndex = correctAnswerIndex
-
+    fileprivate init(_ questionJSON: QuestionJSON) {
+        self.questionText = questionJSON.question
+        
+        var allAnswers = questionJSON.incorrectAnswers
+        allAnswers.append(questionJSON.correctAnswer)
+        allAnswers.shuffle()
+        
+        self.answers = allAnswers
+        self.category = questionJSON.category
+        self.correctAnswerIndex = allAnswers.firstIndex(of: questionJSON.correctAnswer)!
+        
     }
 }
 
@@ -92,17 +97,8 @@ final class QuestionsRepository: QuestionProvider {
         var questions: [Question] = []
 
         for questionJSON in response.results {
-            var allAnswers = questionJSON.incorrectAnswers
-            allAnswers.append(questionJSON.correctAnswer)
-            allAnswers.shuffle()
-
-            let question = Question(
-                questionText: questionJSON.question,
-                answers: allAnswers,
-                category: questionJSON.category,
-                correctAnswerIndex: allAnswers.firstIndex(of: questionJSON.correctAnswer)!
-            )
-            questions.append(question)
+            
+            questions.append(Question( questionJSON))
             }
         return questions
     }
