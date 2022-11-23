@@ -16,9 +16,9 @@ class LeaderboardViewController: UIViewController {
         super.viewDidLoad()
 
         showLeaderboardEntryMessage()
-        
-        print(self.quizManager!.getUsername())
-        print(self.quizManager!.getPoints())
+//        
+//        print(self.quizManager!.getUsername())
+//        print(self.quizManager!.getPoints())
     }
     
     func showLeaderboardEntryMessage() {
@@ -31,15 +31,7 @@ class LeaderboardViewController: UIViewController {
             messageAlertText = "Correct answers in a row: \(correctAnswersInARow)"
         }
         messageAlertText += ".\nPoints: \(self.quizManager.getPoints())"
-        showAlert(title: "Congratulations!", messageAlertText)
-    }
-    
-    func showAlert(title: String, _ message: String) {
-        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertController.addAction(alertAction)
-        self.present(alertController, animated: true)
+        self.showAlert(title: "Congratulations!", messageAlertText)
     }
 }
 
@@ -103,6 +95,7 @@ class Leaderboard {
             if !isUserFound {
                 newList.append(leaderboardUser)
             }
+            
 //            sortByPoints(list: <#T##[User]#>)
             self.leaders = newList
             defaults.set(newList.toJSONString(), forKey: key)
