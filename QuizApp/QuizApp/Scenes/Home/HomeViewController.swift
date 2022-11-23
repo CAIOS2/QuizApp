@@ -30,6 +30,8 @@ class HomeViewController: UIViewController {
         let startNewGameVC = StartNewGameViewController()
         startNewGameVC.questionProvider = QuestionsRepository() //QuestionsRepository()
         
+        startNewGameVC.delegate = userManager
+        
         navigationController?.pushViewController(startNewGameVC, animated: true)
     
     }

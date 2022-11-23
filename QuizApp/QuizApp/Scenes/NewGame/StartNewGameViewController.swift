@@ -6,14 +6,17 @@
 //
 import UIKit
 
-//protocol NewGameViewDelegate: AnyObject {
-//    func createNewUser(username: String) -> User
-//}
+protocol NewGameViewDelegate: AnyObject {
+   func createNewUser(username: String) -> User
+}
 
 class StartNewGameViewController: UIViewController {
     var questionProvider: QuestionProvider!
     var quizManager: QuizManager!
-//    init(questionProvider: QuestionProvider) {
+    var delegate: NewGameViewDelegate?
+    
+    
+//  init(questionProvider: QuestionProvider) {
 //        self.questionProvider = questionProvider
 //        super.init()
 //    }

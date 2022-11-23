@@ -9,7 +9,15 @@ import Foundation
 
 final class UserManager {
     var users = [User]()
-  
+    
+}
+extension UserManager: NewGameViewDelegate {
+    func createNewUser(username: String) -> User {
+        
+        
+        return User(username: "")
+    }
+    
 }
 //
 //extension UserManager: NewGameViewDelegate {
