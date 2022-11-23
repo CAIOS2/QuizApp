@@ -75,6 +75,7 @@ class QuizesViewController: UIViewController {
         } else {
             UIAlertController.showErrorAlert(title: "End", message: "Game is finished points: \(currentPoints)", controller: self) { [unowned self] _ in
                 self.navigationController?.popViewController(animated: true)
+                self.navigationController?.popViewController(animated: true)
             }
         }
         
