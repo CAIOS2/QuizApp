@@ -50,7 +50,8 @@ class StartNewGameViewController: UIViewController {
             return
         }
         
-        
+        let newUser = delegate?.createNewUser(username: usernameTextField.text!)
+        quizManager.currentUser = newUser!
         let quizesVC = QuizesViewController()
         quizesVC.quizManager = quizManager
         self.navigationController?.pushViewController(quizesVC, animated: true)
