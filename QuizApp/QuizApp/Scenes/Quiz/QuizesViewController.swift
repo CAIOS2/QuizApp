@@ -73,7 +73,9 @@ class QuizesViewController: UIViewController {
       greenButton.setTitle(question.answers[2], for: .normal)
       yellowButton.setTitle(question.answers[3], for: .normal)
     } else {
-      UIAlertController.showErrorAlert(title: "End", message: "Game is finished points: \(currentPoints)", controller: self)
+        UIAlertController.showErrorAlert(title: "End", message: "Game is finished points: \(currentPoints)", controller: self) { [unowned self] _ in
+            self.navigationController?.popViewController(animated: true)
+    
     }
 
   }
