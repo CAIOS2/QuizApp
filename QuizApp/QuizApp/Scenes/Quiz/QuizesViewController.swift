@@ -7,9 +7,20 @@
 
 import UIKit
 
+struct ButtonIndexes {
+    let blue: Int = 0
+    let green: Int = 1
+    let red: Int = 2
+    let yellow: Int = 3
+    
+}
+
+
+
 class QuizesViewController: UIViewController {
     
     var quizManager: QuizManager!
+   // var tappedButtonIndex: Int
     
     //MARK: - Override
     override func viewDidLoad() {
@@ -58,88 +69,22 @@ class QuizesViewController: UIViewController {
     
     
     @IBAction func blueButtonTapped(_ sender: Any) {
-        if quizManager.questions[quizManager.currentQuestionIndex].correctAnswerIndex == 0 {
-            quizManager.calculatePoints(selectedAnswerIndex: 0)
-            pointsCounterLabel.text = "Correct, you got \(quizManager.lastQuestionPoints) points!"
-            pointsLabel.text = "Points: \(quizManager.points)"
-            print("Blue true")
-        } else {
-            quizManager.calculatePoints(selectedAnswerIndex: 0)
-            pointsCounterLabel.text = "Incorrect, you lose \(quizManager.lastQuestionPoints) points!"
-            pointsLabel.text = "Points: \(quizManager.points)"
-            print("Blue false")
-        }
-        if quizManager.checkIfQuizHasMoreQuestions() {
-            quizManager.loadQuestion(isInitialQuestion: false)
-            getQuestionLabel()
-            getAnswersLabels()
-        } else {
-            showLoginErrorMessage(nil)
-        }
+        buttonActions(for_index: 0)
     }
     
     
     @IBAction func greenButtonTapped(_ sender: Any) {
-        quizManager.calculatePoints(selectedAnswerIndex: 0)
-        if quizManager.questions[quizManager.currentQuestionIndex].correctAnswerIndex == 1 {
-            pointsCounterLabel.text = "Correct, you got \(quizManager.lastQuestionPoints) points!"
-            pointsLabel.text = "Points: \(quizManager.points)"
-            print("Green true")
-        } else {
-            pointsCounterLabel.text = "Incorrect, you lose \(quizManager.lastQuestionPoints) points!"
-            pointsLabel.text = "Points: \(quizManager.points)"
-            print("Green false")
-        }
-        
-        if quizManager.checkIfQuizHasMoreQuestions() {
-            quizManager.loadQuestion(isInitialQuestion: false)
-
-            getQuestionLabel()
-            getAnswersLabels()
-        }
-        
+        buttonActions(for_index: 1)
     }
-    
+    			
     
     @IBAction func redButtonTapped(_ sender: Any) {
-        quizManager.calculatePoints(selectedAnswerIndex: 2)
-        if quizManager.questions[quizManager.currentQuestionIndex].correctAnswerIndex == 2 {
-            pointsCounterLabel.text = "Correct, you got \(quizManager.lastQuestionPoints) points!"
-            pointsLabel.text = "Points: \(quizManager.points)"
-            print("Red true")
-        } else {
-            pointsCounterLabel.text = "Incorrect, you lose \(quizManager.lastQuestionPoints) points!"
-            pointsLabel.text = "Points: \(quizManager.points)"
-            print("Red false")
-        }
-        
-        if quizManager.checkIfQuizHasMoreQuestions() {
-            quizManager.loadQuestion(isInitialQuestion: false)
-
-            getQuestionLabel()
-            getAnswersLabels()
-        }
+        buttonActions(for_index: 2)
     }
     
     
     @IBAction func yellowButtonTapped(_ sender: Any) {
-        quizManager.calculatePoints(selectedAnswerIndex: 3)
-        if quizManager.questions[quizManager.currentQuestionIndex].correctAnswerIndex == 3 {
-            pointsCounterLabel.text = "Correct, you got \(quizManager.lastQuestionPoints) points!"
-            pointsLabel.text = "Points: \(quizManager.points)"
-            print("yellow true")
-        } else {
-            pointsCounterLabel.text = "Incorrect, you lose \(quizManager.lastQuestionPoints) points!"
-            pointsLabel.text = "Points: \(quizManager.points)"
-            print("Yellow false")
-        }
-        
-        if quizManager.checkIfQuizHasMoreQuestions() {
-            quizManager.loadQuestion(isInitialQuestion: false)
-
-            getQuestionLabel()
-            getAnswersLabels()
-        }
+        buttonActions(for_index: 3)
     }
     
     
@@ -149,8 +94,35 @@ class QuizesViewController: UIViewController {
         
         alertController.addAction(alerAction)
         self.present(alertController, animated: true)
+        
+        // TODO: after close return to homeview
+        // TODO: reset some variables in quizmanager
+        
     }
     
+    
+    func buttonActions(for_index index: Int) {
+        if quizManager.questions[quizManager.currentQuestionIndex].correctAnswerIndex == index {
+            quizManager.calculatePoints(selectedAnswerIndex: index)
+            pointsCounterLabel.text = "Correct, you got \(quizManager.lastQuestionPoints) points!"
+            pointsLabel.text = "Points: \(quizManager.points)"
+            print("\(index) true")
+        } else {
+            quizManager.calculatePoints(selectedAnswerIndex: 0)
+            pointsCounterLabel.text = "Incorrect, you lose \(quizManager.lastQuestionPoints) points!"
+            pointsLabel.text = "Points: \(quizManager.points)"
+            print("\(index) false")
+        }
+        if quizManager.checkIfQuizHasMoreQuestions() {
+            quizManager.loadQuestion(isInitialQuestion: false)
+            getQuestionLabel()
+            getAnswersLabels()
+        } else {
+            showLoginErrorMessage(nil)
+        }
+        
+        
+    }
     
     
     
