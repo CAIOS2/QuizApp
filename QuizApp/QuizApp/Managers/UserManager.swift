@@ -26,13 +26,16 @@ extension UserManager: NewGameViewDelegate {
 //    }
 //}
 //
-//extension UserManager: LeaderboardManaging {
-//    func hasAnyonePlayed() -> Bool {
-//        // Truksta kodo
-//    }
-//    
-//    func allPlayers() -> [User] {
-//        // Truksta kodo
-//    }
-//}
+extension UserManager: LeaderboardManaging {
+    func hasAnyonePlayed() -> Bool {
+        // Truksta kodo
+        return !users.isEmpty
+        
+    }
+    
+    func allPlayers() -> [User] {
+        // Truksta kodo
+        return users
+    }
+}
 
