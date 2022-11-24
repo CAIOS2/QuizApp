@@ -9,13 +9,12 @@ import Foundation
 
 final class UserManager {
     var users = [User]()
-    
 }
 extension UserManager: NewGameViewDelegate {
     func createNewUser(username: String) -> User {
-        
-        
-        return User(username: "")
+        let user = User(username: username)
+        self.users.append(user)
+        return user
     }
     
 }
