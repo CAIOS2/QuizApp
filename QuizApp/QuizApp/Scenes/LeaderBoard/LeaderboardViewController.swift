@@ -14,13 +14,46 @@ protocol LeaderboardManaging: AnyObject {
 
 class LeaderboardViewController: UIViewController {
 
-    var leaderboardManagerDelegate: LeaderboardManaging?
+    //MARK: - Properties
+    
+   weak var leaderboardManagerDelegate: LeaderboardManaging?
+    var leaderboardManager = LeaderboardManager()
+    var sortedUsers: [User] = []
+    
+    //MARK: - Outlets
+    
+    //TODO: Move here outlets for three buttons
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //TODO: Hide three buttons
+        //TODO: Set `sortedUsers` property
+        
+        updateLabels()
+    }
+    
+    //MARK: - Actions
+    
+    //TODO: Move button actions
+    
+    //MARK: - Private
+    
+    private func updateLabels() {
+        
+        if sortedUsers.isEmpty {
+            updateButtonsNoUsers()
+            return
+        }
+        
+        //TODO: Add implementation for buttons show/hide logic
+        //TODO: Add implementation for button titles
+        
+    }
+    
+    private func updateButtonsNoUsers() {
+        //TODO: Show message on the button then there is no users played
     }
 
 
