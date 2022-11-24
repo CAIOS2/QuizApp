@@ -59,6 +59,12 @@ class LeaderboardViewController: UIViewController {
         }
         
         //TODO: Add implementation for buttons show/hide logic
+        if sortedUsers.count >= 1 {
+            firstButton.setTitle(sortedUsers[0].username, for: .normal)
+            firstButton.isHidden = false
+        }
+        
+        
         //TODO: Add implementation for button titles
         
     }
