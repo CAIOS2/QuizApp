@@ -12,14 +12,15 @@ protocol NewGameViewDelegate: AnyObject {
 
 class StartNewGameViewController: UIViewController {
     var questionProvider: QuestionProvider!
-    var quizManager: QuizManager!
     var delegate: NewGameViewDelegate?
     
+    var questions: [Question]?
     
 //  init(questionProvider: QuestionProvider) {
 //        self.questionProvider = questionProvider
 //        super.init()
 //    }
+    
     @IBOutlet private weak var usernameTextField: UITextField!
     
     override func viewDidLoad() {
@@ -30,10 +31,9 @@ class StartNewGameViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        questionProvider.getQuestions { [unowned self] questions in
-            self.quizManager = QuizManager(
-                user: User(username: "Useris"),
-                questions: questions)
+        questionProvider.getQuestions { [weak self] questions in
+            guard let self = self else { return }
+            self.questions = questions
         }
     }
     
@@ -50,8 +50,14 @@ class StartNewGameViewController: UIViewController {
             return
         }
         
-        let newUser = delegate?.createNewUser(username: usernameTextField.text!)
-        quizManager.currentUser = newUser!
+        guard
+            let newUser = delegate?.createNewUser(username: usernameTextField.text!),
+            let questions = questions
+        else {
+            return
+        }
+        
+        let quizManager = QuizManager(user: newUser, questions: questions)
         let quizesVC = QuizesViewController()
         quizesVC.quizManager = quizManager
         self.navigationController?.pushViewController(quizesVC, animated: true)
