@@ -60,10 +60,19 @@ class LeaderboardViewController: UIViewController {
         
         //TODO: Add implementation for buttons show/hide logic
         if sortedUsers.count >= 1 {
-            firstButton.setTitle(sortedUsers[0].username, for: .normal)
+            firstButton.setTitle(sortedUsers[0].username + " " + "\(sortedUsers[0].totalPoints())", for: .normal)
             firstButton.isHidden = false
         }
         
+        if sortedUsers.count >= 2 {
+            secondButton.setTitle(sortedUsers[1].username + " " + "\(sortedUsers[1].totalPoints())", for: .normal)
+            secondButton.isHidden = false
+        }
+        
+        if sortedUsers.count == 3 {
+            thirdButton.setTitle(sortedUsers[2].username + " " + "\(sortedUsers[2].totalPoints())", for: .normal)
+            thirdButton.isHidden = false
+        }
         
         //TODO: Add implementation for button titles
         
