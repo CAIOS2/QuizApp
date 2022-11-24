@@ -21,10 +21,11 @@ class LeaderboardViewController: UIViewController {
     var sortedUsers: [User] = []
     
     //MARK: - Outlets
-    
-    //TODO: Move here outlets for three buttons
-    
-    
+  @IBOutlet private weak var firstButton: UIButton!
+  @IBOutlet private weak var secondButton: UIButton!
+  @IBOutlet private weak var thirdButton: UIButton!
+  
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
