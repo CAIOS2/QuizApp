@@ -30,8 +30,18 @@ class LeaderboardViewController: UIViewController {
         super.viewDidLoad()
 
         //TODO: Hide three buttons
+        
+        firstButton.isHidden = true
+        secondButton.isHidden = true
+        thirdButton.isHidden = true
+        
         //TODO: Set `sortedUsers` property
         
+        if let players = leaderboardManagerDelegate?.allPlayers() {
+            
+           sortedUsers = leaderboardManager.sortTopThreeUsersByPoints(users: players)
+        }
+         
         updateLabels()
     }
     

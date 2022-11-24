@@ -38,6 +38,7 @@ class HomeViewController: UIViewController {
     
     @IBAction private func leaderboardTapped(_ sender: Any) {
         let leaderboardVC = LeaderboardViewController()
+        leaderboardVC.leaderboardManagerDelegate = userManager
         
         navigationController?.pushViewController(leaderboardVC, animated: true)
     }
